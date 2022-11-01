@@ -1,0 +1,820 @@
+
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+    <!-- <link href='styles/googleapifonts.css' rel='stylesheet' type='text/css'> -->
+    <title>FixChap</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/menu.css">
+    <link rel="stylesheet" type="text/css" href="styles/custom.css">
+    <link rel="stylesheet" type="text/css" href="styles/framework.css">
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="custom_fonts/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/sweetalert.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.css">
+    <script type="text/javascript" src="cordova.js"></script> 
+</head>
+<body class="landing-homepage disable-select" id="theBody">
+    <div id="app_in_map">
+        <div class="header-fixed fixchap-address-header map-address-header">
+            <a href="#" onclick='onBackKeyDown()' class="header-icon-1"><i class="fa fa-arrow-left"></i></a>
+            <span class="service_nametitle"></span>
+            <p id="thInfo">Where can we find you?</p>
+            <div class="fixchap-connection"></div>
+        </div>      
+        <div id="map_canvas">
+            <div>
+            <form id="location_search_form">
+               <input id="pac-input" class="fc-search-input pac-item" placeholder="Search Location" type="text"/>
+            </form>
+            </div>
+        </div>
+        <button class="fc-map-btn" id="done_btn" onclick='fixchap_availability()'>Next</button>
+    </div>
+    
+
+    <div id="app_out_map">
+        <div id="home_page">
+            <div class="gallery-fix"></div>
+            <div class="sidebar-tap-close" id="taptoclose"></div>
+
+            <div class="header-fixed fixchap-recommend_fundi-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <font class="fixchap-title">Recommend Fundi</font>
+                <div class="fixchap-connection"></div>
+            </div> 
+
+            <div class="header-fixed fixchap-on_progress-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <font class="fixchap-title">On Progress</font>
+                <div class="fixchap-connection"></div>
+            </div> 
+
+            <div class="header-fixed fixchap-settings-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <font class="fixchap-title trn">Settings</font>
+                <div class="fixchap-connection"></div>
+            </div>  
+
+            <div class="fc-request-header-fix fixchap-request-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <center><font class="fixchap-request-title" id="fc-rq-no"></font></center>
+                <div class="fixchap-connection"></div>
+            </div> 
+
+            <div class="header-fixed fixchap-completed-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <font class="fixchap-title">Completed</font>
+                <div class="fixchap-connection"></div>
+            </div> 
+
+                <div class="header-fixed fixchap-home-header" style="background: none;">
+                    <div  style="background-color: #13A89F;">
+
+                        <div class="header-icon-1 open-left-sidebar fixchap-open-sidebar"><i class="fa fa-navicon"></i></div>
+                        <font class="fixchap-title">What can we fix for you?</font>
+                        <div>
+
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- <div onclick="pre_marketplace()" class="row" style="margin: 15px; padding: 5px 5px 5px 5px; background-color: #FCFCFC; border-radius: 15px; border: 1px solid #BCF0ED;">
+                        <div>
+                            <div style="margin-top: -8px; color: red; right: 20px; top: 0; background-color: yellow; position: absolute;">
+                                <img src="images/new_serv.png" width="30">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3" style="padding-top: 5px; padding-right: 0px;">
+                                
+                                    <img src="marketplace/assets/images/mp_logo.png" width="65" height="65" style="border-radius: 50%;float: right;">
+                                
+                            </div>
+                            <div class="col-xs-9 col-sm-9 col-md-9" style="color: #13A89F;">
+
+                                <p style="line-height: 13px; color:#13A89F; font-size: 25px; padding: 18px 0px 0px 0px; margin: 0px;">
+                                    Marketplace
+                                </p>
+
+                                <p style="padding-top: 5px; line-height: 22px; color: #B4B4B4;">Buy & sale used items.</p>
+
+                            </div>
+                        </div>
+                    </div> -->
+                    <div onclick="pre_marketplace()" class="row" style="margin: 15px; padding: 5px 5px 5px 5px; background-color: #13A89F; border-radius: 15px; border: 1px solid #BCF0ED;">
+                        <div>
+                            <div style="margin-top: -8px;  right: 20px; top: 0;  position: absolute;">
+                                <img src="img/new_serivice-01.png" width="30" style="image-rendering: -webkit-optimize-contrast;">
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3" style="padding-top: 5px; padding-right: 0px;">
+                                
+                                    <img src="img/mplogo.png" width="65" height="65" style="float: right; image-rendering: -webkit-optimize-contrast;">
+                                
+                            </div>
+                            <div class="col-xs-9 col-sm-9 col-md-9" style="color: #13A89F;">
+
+                                <p style="line-height: 13px; color: white; font-size: 25px; padding: 18px 0px 0px 0px; margin: 0px;">
+                                    Marketplace
+                                </p>
+
+                                <p style="padding-top: 5px; line-height: 22px; color: #dddddd;">Buy & sale used items.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+
+              <div class="header-fixed fixchap-time-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <p class="fixchap-title" >When would you like the Pro to come?</p>
+                <div class="fixchap-connection"></div>
+              </div>
+
+              <div class="header-fixed fixchap-pricing-header">
+                <div onclick='backdownfromPricing()' class="header-icon-1" style="height: 80px; font-size: 19px; z-index: 1;"><i class="fa fa-arrow-left"></i></div>
+                <p class="fixchap-title" >Pricing</p>
+                <div class="fixchap-connection" style="margin-top: -10px;"></div>
+              </div>
+
+            <div class="header-fixed fixchap-address-header">
+                <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px;"><i class="fa fa-arrow-left"></i></div>
+                <span class="service_nametitle"></span>
+                <p style="" id="thInfo">Where can we find you?</p>
+                <div class="fixchap-connection"></div>
+            </div>      
+
+          <div class="header-fixed fixchap-review-header">
+            <div onclick='onBackKeyDown()' class="header-icon-1" style="height: 80px; font-size: 19px;"><i class="fa fa-arrow-left"></i></div>
+            <span>Almost There</span>
+            <p >Please confirm the details below</p>
+            <div class="fixchap-connection"></div>
+          </div>  
+
+            <div class="sidebar-left sidebar-dark" id="theleftnav">
+                <div class="sidebar-scroll fixchap-sidebar" style="background: url(images/23.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+                    <div class="fixchap-sidebar-user registered">
+                        <center>
+                            <img src="images/profile.jpg" height="70" class="up_photo" onerror="this.src='images/profile.jpg'">
+                            <p id="user_name"></p>
+                        </center>
+                    </div>
+                    <div class="fixchap-sidebar-user unregistered" style="background-color: white; border-bottom: 1px solid #13A89F; background-image: linear-gradient(#B6DFDC, #13A89F);">
+                        <center>
+                            <img src="images/logo.png" height="70" style="border-radius: 0px;">
+                            <div style="margin-top: 20px;">&nbsp;</div>
+                        </center>
+                    </div>
+                    <div class="sidebar-menu fixchap-menu">
+
+                        <div class="unregistered" style="margin-top: 20px;"></div>
+                        
+                        <div onclick='close_menu(); navigate("on_progress");' class="nMenu registered" style="margin-top: 25px;">
+                            <img src="images/menu_icon_on_progress-01.png" class="nMenuIcon" />
+                            <div class="nMenuFont"><font class="trn">On Progress</font> <span class="pre_sup" id="sup_onprogress"></span></div>
+                        </div>
+
+                        <div onclick='close_menu(); navigate("completed");' class="nMenu registered">
+                            <img src="images/menu_icon_completed.png" class="nMenuIcon" />
+                            <div class="nMenuFont"><font class="trn">Completed</font> <span class="pre_sup" id="sup_completed"></span></div>
+                        </div>
+
+
+                        <div onclick='close_menu(); navigate("pricing");' class="nMenu">
+                            <img src="images/menu_icon_pricing.png" class="nMenuIcon" />
+                            <div class="nMenuFont trn">Pricing</div>
+                        </div>
+                        <div class="nMenu">
+                            <a href="tel:+255712770011">
+                                <img src="images/menu_icon_support.png" class="nMenuIcon" />
+                                <div class="nMenuFont trn">Call Support</div>
+                            </a>
+                        </div>
+                        <div onclick='close_menu(); navigate("settings");' class="nMenu registered">
+                            <img src="images/menu_icon_settings.png" class="nMenuIcon" />
+                            <div class="nMenuFont trn">Settings</div>
+                        </div>
+                        <a href="https://fixchap.com/terms.html" class="nMenu registered">
+                            <img src="images/menu_icon_legal.png" class="nMenuIcon" />
+                            <div class="nMenuFont trn">Legal</div>
+                        </a>
+                        
+
+                            
+                        <div class="nMenu registered">
+                            <img src="images/menu_icon_logout.png" class="nMenuIcon" />
+                            <div class="nMenuFont trn" onclick='log_me_out()'>Logout</div>
+                        </div>
+                            
+
+                        <a href="#" class="registered trn" onclick='close_menu(); navigate("recommend_fundi");' style="width:150px;  background-color: #13A89F; border: none; color: white;text-align: center;text-decoration: none; border-radius: 5px; display: inline-block;font-size: 12px;margin: 20px 2px 0px 20px; padding: 9px 14px 9px 14px; text-decoration: none;">Recommend Fundi</a>
+
+                        <a href="#" class="unregistered trn" onclick='close_menu(); sign_in(120);' style="width: 150px;background-color: #13A89F; border: none; color: white;text-align: center;text-decoration: none; border-radius: 5px; display: inline-block;font-size: 14px;margin: 35px 2px 0px 20px; padding: 9px 0px 9px 0px; text-decoration: none;">Login / Register</a>
+                        
+                    </div>
+                    <div style="background-color: #13A89F; margin-bottom: -5px; position: absolute; bottom: 5px; border-top: 1px solid #9A9999; width: 100%; padding: 5px 11px 9px 11px;">
+                        <table style="padding: 0px; margin: 0px;">
+                            <tbody><tr style=" padding: 0px; margin: 0px;">
+                                <td style="padding: 0px 0px 0px 0px; text-align: left; color: #8B8888;"><a href="https://fixchap.com/terms.html" style="text-decoration: none; color: white;"></a></td>
+                                <td style="padding: 0px 0px 0px 0px; text-align: right; color: white;" id="version_code"></td>
+                            </tr>
+                        </tbody></table> 
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="page-content" style="background: url(images/17.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+            <div id="page-content-scroll">
+                <div class="page page-home">    
+
+                    <div>  
+                        <ul style="padding-top: 180px;">
+                            <li>
+                                <a href="#" onclick="get_service(1, 'Electrical')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #5D52A1;">
+                                    <center><img src="images/icons/electric.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Electrical<br>&nbsp;&nbsp;</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="get_service(2, 'Plumbing')" style="color: #0C5E99;  text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #0F9D58;">
+                                    <center><img src="images/icons/plumbing.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Plumbing<br>&nbsp;&nbsp;</em>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a onclick="get_service(9, 'Air Condition (AC)')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #13A89F;">
+                                    <center><img src="images/icons/ac.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Air Condition<br>(AC)</em>
+                                </a>
+                            </li> 
+
+                            <li>
+                                <a onclick="satellite()" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #506A85;">
+                                    <center><img src="images/icons/dish.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Satellite<br>Dish</em>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a onclick="get_service(26, 'Gas cookers & ovens')" style="color: #0C5E99; text-decoration: none;">
+                                    <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #0F9D58;">
+                                        <center><img src="images/icons/cooker_gas.png" width="35" height="35"></center>
+                                    </i>
+                                    <em style="line-height: 16px;">Gas Cookers<br>& Ovens</em>
+                                    </a>
+                                </li>
+
+                            
+
+                            <!-- <li>
+                                <a onclick="cookersandstoves();" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="background-color: #5D52A1; padding-top: 15px;">
+                                    <center><img src="images/icons/cooker_gas.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Cookers &<br>Stoves</em>
+                                </a>
+                            </li> -->
+
+                            <li>
+                                <a onclick="get_service(6, 'Carpentry')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #506A85;">
+                                    <center><img src="images/icons/carpentry.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Carpentry<br>&nbsp;&nbsp;</em>
+                                </a>
+                            </li>
+
+                           
+
+                            <li>
+                                <a onclick="get_service(16, 'Fridge')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #13A89F;">
+                                    <center><img src="images/icons/fridge.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Fridge<br>&nbsp;&nbsp;</em>
+                                </a>
+                            </li>  
+
+                            <li>
+                                <a onclick="get_service(26, 'Electric cookers & ovens')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #506A85;">
+                                    <center><img src="images/icons/cooker_gas.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Electric Cookers<br>& Ovens</em>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a onclick="computer_repair()" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #DB4437;">
+                                    <center><img src="images/icons/computer.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Computer<br>Repair</em>
+                                </a>
+                            </li>
+                           
+                             
+                            
+                            <li>
+                                <a onclick="get_service(4, 'Painting')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px;padding-top: 15px; background-color: #F4B400;">
+                                    <center><img src="images/icons/painting.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Painting<br>&nbsp;&nbsp;</em>
+                                </a>
+                            </li>
+
+                            
+                            
+                            <!-- <li>
+                            <a onclick="get_service(27, 'Washing Machine')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #0F9D58;">
+                                    <center><img src="images/icons/washing_machine.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Washing<br>Machine</em>
+                                </a>
+                            </li> -->
+
+                            <li>
+                                <a onclick="get_service(14, 'Aluminium & Glasswork')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #DB4437;">
+                                    <center><img src="images/icons/glass.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">Aluminium &<br>Glasswork</em>
+                                </a>
+                            </li>
+          
+                            <li>
+                            
+                                <a  onclick="get_service(17, 'CCTV Camera')" style="color: #0C5E99; text-decoration: none;">
+                                <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #F4B400;">
+                                    <center><img src="images/icons/cctv.png" width="35" height="35"></center>
+                                </i>
+                                <em style="line-height: 16px;">CCTV<br>Camera</em>
+                                </a>
+                            </li>
+                            <!-- <li>
+                            
+                            <a  onclick="get_service(27, 'Washing Machine')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #5D52A1;">
+                                <center><img src="images/icons/washing_machine.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Washing<br>Machine</em>
+                            </a>
+                            </li>
+                            <li>
+                            <a onclick="get_service(28, 'Printer & Photocopier')" style="color: #0C5E99;  text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #0F9D58;">
+                                <center><img src="images/icons/printers.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Printer<br>& Photocopier</em>
+                            </a>
+                            </li>
+                            <li>
+                            <a onclick="get_service(29, 'TV')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #506A85;">
+                                <center><img src="images/icons/tv.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">TV<br>&nbsp;&nbsp;</em>
+                            </a>
+                            </li> -->
+                        
+                            <!-- <li>
+                            <a onclick="electronics()" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px;padding-top: 15px; background-color: #F4B400;">
+                                <center><img src="images/icons/electronics3.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Electronics<br>&nbsp;&nbsp;</em>
+                            </a>
+                            </li>
+                            <li>
+                            <a onclick="get_service(30, 'Generator')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #DB4437;">
+                                <center><img src="images/icons/thegenerator.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Generator<br>&nbsp;&nbsp;</em>
+                            </a>
+                            </li>
+                            <li>
+                            <a onclick="get_service(32, 'Mobile Phone Software')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #13A89F;">
+                                <center><img src="images/icons/mobile.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Mobile Phone<br>Software</em>
+                            </a>
+                            </li>   
+                            <li>
+                            <a onclick="get_service(33, 'Electric Cooker & Oven')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #506A85;">
+                                <center><img src="images/icons/gase_stove.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Electric Cooker<br>& Oven</em>
+                            </a>
+                            </li>
+                            <li>
+                            <a onclick="get_service(34, 'Sofa')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="font-size: 25px; padding-top: 15px; background-color: #0F9D58;">
+                                <center><img src="images/icons/sofa.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Sofa Repair<br>& Cleaning</em>
+                            </a>
+                            </li>
+                            <li>
+                            <a onclick="get_service(35, 'Curtain')" style="color: #0C5E99; text-decoration: none;">
+                            <i class="icon" style="background-color: #5D52A1; padding-top: 15px;">
+                                <center><img src="images/icons/curtains.png" width="35" height="35"></center>
+                            </i>
+                            <em style="line-height: 16px;">Curtains Repair<br>& Installation</em>
+                            </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>  
+                <div class="page page-address">
+                    <div class="fixchap-address-card">
+                        <div class="address-card-head"><h3>My Addresses</h3></div>
+                    <div id="fc-address-list">
+                    </div>
+
+                        <div onclick='go_back_array.push("address"); navigate("map");' class="address-card-body" style="margin-bottom: 20px; background-color: #13A89F;">   
+                            <div class="address-card-map" style="color: white;">
+                                <center><i class="fa fa-map"></i> &nbsp;Go to Map</center>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                  <div class="page page-time">
+                    
+                        <div class="fixchap-address-card" style="display: none;">
+                            <!-- <div style="text-align: center; color: #F1F1F1; padding: 20px 20px 0px 20px;">Tap to edit</div> -->
+                          <div class="address-card-body fc-scheduled-date date_display"></div>
+
+                          <div class="address-card-body fc-scheduled-time time_display"></div>
+
+                    
+                        </div>
+
+                        <div style="padding: 20px; margin-top: 80px;">
+                            <div style="overflow:hidden; ">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div id="datetimepicker12"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div onclick='confirm_time()' class="address-card-body fc-next-btn" id="time_next_btn" style="margin: 0px 0px 20px 0px; color: white; border-radius: 4px; background-color: #13A89F; border-color: #13A89F; width: 100%;">  
+                                <div class="address-card-map" style="color: white;">
+                                  <center> Next </center>
+                                </div>
+                             </div>
+                        </div>
+                    
+                  </div>
+
+                  <div class="page page-review">
+                    <div class="fixchap-address-card">
+
+                        <div class="fc-review-title">Service</div>
+                        <div class="fc-review-details service_nametitle"></div>
+                        <center><div class="fc-review-border"></div></center>
+                      
+                        <div class="fc-review-title">Location</div>
+                        <div class="fc-review-details" id="location_review"></div>
+                        <center><div class="fc-review-border"></div></center>
+
+                        <div class="fc-review-title">Date & Time</div>
+                        <div class="fc-review-details"><font class="date_display"></font> <font class="time_display"></font></div>
+
+                    </div>
+
+                    <div class="fixchap-address-card fc-alt-number-div">
+                            <font class="details_head">Emergency Contact</font><br>
+                            <div style="line-height: 8px;">
+                            <font style="color: #0D7670; font-size: 14px;"><small style="font-size: 11px;">Incase we can't reach you<br><br></small></font><br>
+                            </div>
+                            <input type="number" id="alt_number" class="fc-emergence-input"/><br><br>           
+                    </div>
+
+                    <div class="fixchap-address-card" id="desc_panel" style="margin-top: 20px; padding: 15px; display: none;">
+                        <a class="details_head" onclick="hideDesc()">Description</a><br>
+                        <textarea rows="4" id="new_desc" style="border: 1px solid #EFEFEF; padding: 7px; width: 100%;"></textarea>
+                    </div>              
+
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-xs-6">
+                            <div style="color: #0C5E99; padding-left: 15px;" id="desc_switch"  onclick="$('#desc_panel').css('display','block'); $('#desc_switch').css('display','none')">Add Description</div>
+                        </div>
+                        <div class="col-xs-6" style="display: block;">
+                            <div style="text-align: right; padding-right: 15px; font-size: 19px;">
+                                <span style="padding: 20px;" id="open_gallery"><i class="fa fa-photo" ></i></span> &nbsp  <span style="padding: 20px;" id="open_camera"><i class="fa fa-camera" ></i></span> 
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <div  class="img_container" style="display: block; padding: 10px 20px 10px 20px;">
+                                <div class="row" id="desc_photo">
+
+
+                                </div>
+                            </div>  
+                        </div>
+
+                    </div>  
+                     
+            
+                    
+                    <div class="fixchap-address-card" style="margin-top: 5px; margin-bottom: 20px;">
+                        <p style="line-height: 18px; padding: 20px 20px 0px 20px; text-align: center;">By clicking submit, I hereby agree to pay the initial visit cost which only applies to cancelled jobs to compensate for the serviceman’s transport and initial assesment.</p>
+                          <div onclick='submit_request()' class="address-card-body fc-next-btn" style="margin: 30px 18px 20px 18px; color: white; background-color: #13A89F; border-color: #13A89F">  
+                            <div class="address-card-map" style="color: white;">
+                              <center> Submit </center>
+                            </div>
+                          </div>          
+                    </div>
+
+                  </div>
+
+                  <div class="page page-recommend_fundi">
+                    <div class="fc-gray-page" style="background: url(images/17.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+
+                        <div class="fc-bootbox-title" style="color: #4f6b83; font-weight: bold; text-align: center; padding-left: 15%; padding-right: 15%; margin-bottom: 30px;">Do you know a good Fundi/Handyman?<br><br>Kindly recommend him to us.</div>
+
+                        <div style="padding: 15px; background-color: white; margin-top: 10px; margin-left: 7%; margin-right: 7%; border: 1px solid #B1C6C4; border-radius: 4px;">
+            
+   
+                        <div class="fc-bootbox-title" style="color: #A4A4A4; font-size: 14px;">Full Name</div>
+                        <div style="padding: 0px;">
+                           <input spellcheck="false" id="recommend_full_name" class="fc-bootbox-input" style="margin: 0px;" placeholder="" type="text"/>
+                        </div>
+                        <div style="margin-top: 10px; color: #A4A4A4; font-size: 14px;" class="fc-bootbox-title">Proffesion</div>
+                        <div>
+                            <input spellcheck="false" id="recommend_proffesion" class="fc-bootbox-input" style="margin: 0px;" placeholder="" type="text"/>
+                        </div>
+                        <div style="margin-top: 10px; color: #A4A4A4; font-size: 14px;" class="fc-bootbox-title">Mobile Number</div>
+                        <div>
+                            <input spellcheck="false" id="recommend_mobile_number" class="fc-bootbox-input" style="margin: 0px;" placeholder="" type="text"/>
+                        </div>
+                        <div class="fc-bootbox-btns">
+                            <font onclick="save_recommend_fundi();">SEND</font>
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+
+
+                  <div class="page page-on_progress">
+                    <div class="fc-gray-page">
+                        <div id="on_progress_list"></div>
+                    </div>
+                  </div>
+
+                  <div class="page page-completed">
+                    <div class="fc-gray-page">
+                        <div id="completed_list"></div>
+                    </div>
+                  </div>
+
+                  <div class="page page-pricing">
+                    <div class="fc-gray-page" style="background: url(images/17.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; overflow: hidden;">
+                        <div id="pricing_list">
+                            <div style="padding: 10px 10px 10px 10px; margin-top: -15px;">
+                                <div>
+                                    <h2 style="font-size: 14px; line-height: 20px; padding: 0px 15px 20px 15px; text-align: center;">The prices below are labor charges only. They do not include material costs.</h2>
+                                    <div class="panel-group" id="accordion">
+
+                                    </div> 
+                                </div>
+                            </div>                          
+
+                        </div>
+                    </div>
+                  </div>
+
+
+                  <div class="page page-settings">
+                    <div class="fc-gray-page">
+                        <div class="photo_section" style="display: none;">
+                            <center>
+                                <img src="images/profile.jpg" height="85" style="border-radius: 50%;" class="up_photo" onerror="this.src='images/profile.jpg'"><br>
+                                
+                                <font id="change_profile_photo_pre" onclick="change_profile_photo_pre();" class="change_photo_link trn">Change Profile Photo</font>
+                            </center>
+                        </div>
+                        <div  style="min-height: 60px;">
+                            
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td class="set_sec_title trn">Name:</td>
+                                    <td class="set_sec_value" onclick="profile_edit_name()" id="st_name"></td>
+                                    <td class="set_sec_edit"  onclick="profile_edit_name()"><img src="images/edit_icon2.png" class="nEditIcon"/></td>
+                                    <td class="set_sec_idle"></td>
+                                </tr>
+                                <tr>
+                                    <td class="set_sec_title trn">Email:</td>
+                                    <td class="set_sec_value" onclick="profile_edit_email()" id="st_email"></td>
+                                    <td class="set_sec_edit" onclick="profile_edit_email()"><img src="images/edit_icon2.png" class="nEditIcon"/></td>
+                                    <td class="set_sec_idle"></td>
+                                </tr>
+                                <tr>
+                                    <td class="set_sec_title trn">Mobile:</td>
+                                    <td class="set_sec_value" onclick="profile_edit_phone()" id="st_mobile"></td>
+                                    <td class="set_sec_edit" onclick="profile_edit_phone()"><img src="images/edit_icon2.png" class="nEditIcon"/></td>
+                                    <td class="set_sec_idle"></td>
+                                </tr>
+                                <tr>
+                                    <td class="set_sec_title trn">Emerg. No.:</td>
+                                    <td class="set_sec_value" onclick="profile_edit_altnumber()" id="st_altmobile"></td>
+                                    <td class="set_sec_edit" onclick="profile_edit_altnumber()"><img src="images/edit_icon2.png" class="nEditIcon"/></td>
+                                    <td class="set_sec_idle"></td>
+                                </tr>
+                                <!--
+                                <tr>
+                                    <td class="set_sec_title trn">Language:</td>
+                                    <td class="set_sec_value"  onclick="profile_edit_language()"  id="st_language"></td>
+                                    <td class="set_sec_edit" onclick="profile_edit_language()" ><img src="images/edit_icon2.png" class="nEditIcon"/></td>
+                                    <td class="set_sec_idle"></td>
+                                </tr>
+                                -->
+                            </table>
+                        </div>
+                    </div>
+                  </div>                      
+
+
+                  <div class="page page-request">
+                    <div class="fc-request-gray-page" style="min-height: 90vh; ">
+
+                        <div class="fc-req-gr-header"></div>
+
+                        <div class="fc-request-status-box" id="fc-status-searching" style="display: none;">
+                            <div class="fc-rq-st-box-text" id="fc-status-searching-text">Searching for handyman</div>
+                        </div>
+                        <div class="fc-request-status-box" id="fc-status-canceled" style="display: none;">
+                            <div class="fc-rq-st-box-text">This request has been cancelled.</div>
+                        </div>
+
+
+                        <div class="fc-request-status-box" id="fc-status-advanced" style="display: none; position: relative;">
+                            <div class="row">
+                                <div class="col-xs-3" style="padding: 16px 0px 0px 35px;">
+                                    <img  id="handyman_profile_pic" onerror='this.src="images/profile.jpg"' height="50" style="border-radius: 50%;" >                               
+                                </div>
+                                <div class="col-xs-9">
+                                <p class="fc-rq-st-bx-name" id="handyman_profile_name"></p>
+                                <p class="fc-rq-st-bx-id" id="handyman_id"></p>
+                                <p class="fc-rq-st-bx-msg" id="handyman_profile_message"></p>
+                                </div>
+
+                            </div>
+                            <a class="call_handyman" id="call_handyman" style="display: none;"><i class="fa fa-phone"></i></a>
+                        </div>
+
+                        <div id="request_details" style="display: none;">
+                  
+
+                            <div style="margin: 25px 10px 10px 10px;">
+                                <div class="row" style="margin: 0px 10px 0px 10px">
+                                    <div class="col-xs-4" style="padding: 0px; color: #13A89F;">Service:</div>
+                                    <div class="col-xs-8" style="padding: 0px; color: #797979;" id="rq_dt_name"></div>
+                                </div>
+                            </div>
+
+                            <div style="margin: 10px;">
+                                <div class="row" style="margin: 0px 10px 0px 10px">
+                                    <div class="col-xs-4" style="padding: 0px; color: #13A89F;">Location:</div>
+                                    <div class="col-xs-8" style="padding: 0px; color: #797979;" id="rq_dt_location"></div>
+                                </div>
+                            </div>
+                            <div style="margin: 10px;">
+                                <div class="row" style="margin: 0px 10px 0px 10px">
+                                    <div class="col-xs-4" style="padding: 0px; color: #13A89F;">Time:</div>
+                                    <div class="col-xs-8" style="padding: 0px; color: #797979;" id="rq_dt_time"></div>
+                                </div>
+                            </div>
+                            <div style="margin: 10px;" id="job_status">
+                                <div class="row" style="margin: 0px 10px 0px 10px">
+                                    <div class="col-xs-4" style="padding: 0px; color: #13A89F;">Job Status:</div>
+                                    <div class="col-xs-8" style="padding: 0px; color: #797979;" id="rq_dt_status"></div>
+                                </div>
+                            </div>
+                         </div>
+                        <div style="margin: 10px; display: none;" id="quotation_panel">
+                            <div class="row" style="margin: 0px 10px 0px 10px">
+                                <div class="col-xs-4" style="padding: 4px 0px 0px 0px; color: #13A89F;" id="rq_dt_qout_title"></div>
+                                <div class="col-xs-8" style="padding: 0px; color: #13A89F; font-size: 20px;" ><font id="rq_dt_quot_amount"></font>
+                                <button type="button" onclick="view_quotation_invoice()" class="btn btn-xs fc-view-quot-btn" style="font-size: 10px;"><i class="fa fa-book"></i> View</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div style="margin: 10px; display: none;" id="rating_panel">
+                            <div class="row" style="margin: 0px 10px 0px 10px">
+                                <div class="col-xs-4" style="padding: 4px 0px 0px 0px; color: #13A89F;">Rating:</div>
+                                <div class="col-xs-8" id="rating_panel_rate" style="padding: 0px; color: #13A89F; font-size: 15px; margin-top: 5px;" >
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="fc-request-btn-cancel" onclick="reject_quotation_confirm_box()" id="reject_quotation" style="display: none; margin-top: 30px;">
+                            Reject / Ammend Quotation
+                        </div>
+                        <div class="fc-request-btn" onclick="accept_quotation()" id="accept_quotation" style="display: none; margin-top: 10px">
+                            Accept Quotation
+                        </div>
+                        <div class="fc-request-btn" onclick="cancel_request()" id="cancel_request_btn" style="display: none; margin-top: 30px;">
+                            Cancel Request
+                        </div>
+
+                        <div class="fc-pay-mpesa" id="pay_mpesa" onclick="pay_mobile('voda')" style="margin-top: 30px; display: none;">
+                            &nbsp;
+                        </div>
+
+                        <div class="fc-pay-tigopesa" id="pay_tigopesa" onclick="pay_mobile('tigo')" style="margin-top: 10px; display: none;">
+                            &nbsp;
+                        </div>
+
+                        <div class="fc-pay-airtelmoney" id="pay_airtelmoney" onclick="pay_mobile('airtel')" style="margin-top: 10px; display: none;">
+                            &nbsp;
+                        </div>
+
+                        <div class="fc-request-btn-cancel" onclick="pay_cash()" id="pay_cash" style="margin-top: 30px; display: none;">
+                            Pay Cash
+                        </div>
+
+                        <div class="fc-request-btn" id="pay_via_mobile_money" onclick="chooses_mobile_money()" style=" margin-top: 10px; display: none;">
+                            Pay via Mobile Money
+                        </div>
+                    </div>
+                  </div>              
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/moment.min.js"></script>
+    <script type="text/javascript" src="bootstrap/transition.min.js"></script>
+    <script type="text/javascript" src="scripts/plugins.js"></script>
+    <script src="scripts/rater.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap-datetimepicker.js"></script>
+    
+    <script src="scripts/bootbox.min.js"></script>
+
+    <script src="scripts/bootbox.locales.min.js"></script>
+
+    <script src="scripts/fastclick.js"></script>
+
+    <script type="text/javascript" src="scripts/sweetalerts.js"></script>
+
+    <script type="text/javascript" src="scripts/initAutocomplete.js"></script>
+
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+
+    <script type="text/javascript" src="scripts/select_service.js"></script>
+
+    <script type="text/javascript" src="scripts/login.js"></script>
+
+
+    <script type="text/javascript" src="scripts/address.js"></script>
+    
+    <script type="text/javascript" src="scripts/sync.js"></script>
+
+    <script type="text/javascript" src="scripts/navigation.js"></script>
+
+    <script type="text/javascript" src="scripts/request.js"></script>
+    <script type="text/javascript" src="scripts/profile.js"></script>
+
+    <script type="text/javascript" src='scripts/autosize.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-T2yF06JC5U_8Lou45QeKVV8XXqXoZNE&libraries=places&callback=initAutocomplete"
+       async defer>
+    </script>
+</body>
+</html>

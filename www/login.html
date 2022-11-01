@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- <link href='styles/googleapifonts.css' rel='stylesheet' type='text/css'> -->
+	<title>FixChap</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/login.css">
+	<link rel="stylesheet" type="text/css" href="styles/menu.css">
+	<link rel="stylesheet" type="text/css" href="styles/framework.css">
+
+	<link rel="stylesheet" type="text/css" href="styles/sweetalert.css">
+<!-- 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.css"> -->
+
+	<!-- <link rel="stylesheet" type="text/css" href="styles/font-awesome.css"> -->
+
+	<script>
+       if (localStorage.getItem("session") == 1){
+               window.location="index.html";
+        } 		
+        if (localStorage.getItem("intro") === null){
+            window.location="about.html";
+        } 
+        localStorage.fromlogin = 1;
+
+
+	</script>	
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/plugins.js"></script>
+	<script type="text/javascript" src="scripts/sweetalerts.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+	<script type="text/javascript" src="cordova.js"></script> 
+	<script type="text/javascript" src="scripts/login_page.js"></script>
+	<style>
+		.title_class {
+			line-height: 60px; font-size: 19px;
+		}
+
+		.header_class {
+			background-color: #13A89F; color: white; height: auto;
+		}
+
+	</style>
+	
+</head>
+<body class="disable-select">
+	<div class="loading" id="loading">
+		<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+	</div>
+	
+	<div class="gallery-fix"></div>
+	<div class="sidebar-tap-close"></div>
+
+	<div class="header-fixed header_class" id="header_class" style="display: none;">
+
+	<center><font style="" id="title" class="title_class">Verify your mobile number</font></center>
+	</div>
+
+
+	<div id="page-content" style="background-color: #F9F9F8; padding-top: 60px; display: none; ">
+		<div style="margin: 17px 15px 7px 0px;">
+		<div class="details_panel" style="margin: 7px; color: #0A5651;" id="infopanel">
+			FixChap will send a one time SMS message to verify your mobile number.
+		</div>
+		<div class="details_panel" style="margin: 7px; color: #0A5651;" id="phonepanel">
+			Please enter your mobile number.
+			<form id="login_form">
+				<input type="number" id="mobile" placeholder="Mobile number" class="phone_input" autofocus/>
+				<p id="error" style="color: red; padding: 0px 0px 5px 5px; margin: 0px;">&nbsp</p>
+				<p id="report" style="padding: 0px 0px 5px 0px; margin: 0px; line-height: 18px; text-align: center;"></p>
+				<button class="button3" type="submit" id="done_btn">Submit</button>
+			</form>
+		</div>
+		<div class="details_panel" style="margin: 7px; color: #0A5651; text-align: center; display: none;" id="verpanel">
+			Enter authentication code which has been sent to your phone.
+			<form id="verify_form">
+				<center><input type="number" id="code" placeholder="Auth Code" class="phone_input2"/></center>
+				<p id="code_error" style="color: red; padding: 0px 0px 5px 5px; margin: 0px;">&nbsp;</p>
+				<button class="button3" type="button" style="background-color: #dee1e6;" id="button_resend_code">Resend</button>
+				<button type="submit" class="button3" id="done_verify">Verify</button>
+				<p style="line-height: 20px; margin-top: 20px;">Didn't receive the SMS? <br><font id="resend_text">Click "Resend" after 20 seconds.</font></p>
+			</form>
+		</div>
+		<div class="details_panel" style="margin: 7px; color: #0A5651; display: none;" id="namepanel">
+			<form id="update_form">
+				<font style="color: #0D7670; font-size: 13px; padding-left: 10px;">First Name</font><br>
+				<input type="text" id="first_name" value="Cyrus" class="phone_input3"/><br><br>
+				<font style="color: #0D7670; font-size: 13px; padding-left: 10px;">Last Name</font><br>
+				<input type="text" id="last_name" class="phone_input3"/><br><br>
+				<div style="line-height: 15px;">
+				<font style="color: #0D7670; font-size: 13px; padding-left: 10px;">Emergency Contact</font><br>
+				<font style="color: #0D7670; font-size: 13px; padding-left: 10px; margin-top: -50px;"><small style="font-size: 11px;">Incase we cant reach you</small></font><br>
+				</div>
+				<input type="number" id="alt_number" class="phone_input3"/><br><br>
+				<font style="color: #0D7670; font-size: 13px; padding-left: 10px;">Email</font><br>
+				<input type="email" id="email" class="phone_input3"/><br><br>
+
+				<p id="name_error" style="color: red; padding: 0px 0px 5px 5px; margin: 0px; text-align: center; line-height: 18px;"></p>
+				<div style="text-align: center;"><button type="submit" class="button4" id="finish">Continue</button></div>
+			</form>
+		</div>	
+		</div>	
+	</div>
+
+	<script>
+
+		$( "#button_resend_code" ).on( "click", function() {
+				swal({ html: true, title: "", text: '<div style="margin: -20px 0px -20px 0px;">Please wait..</div>', showConfirmButton: false});	
+
+				var settings = {
+				  "async": true,
+				  "crossDomain": true,
+				  "url": "https://fixchap.com/dev/login/api/send/code",
+				  "method": "POST",
+				  "headers": {
+				    "Content-Type": "application/json"
+				  },
+				  "processData": false,
+				  "data": "{\n\t\"mobile\": \""+localStorage.mobile+"\"\n}"
+				};
+
+				$.ajax(settings).done(function (response) {
+					 swal.close();
+					var data = JSON.parse(response);
+				  	if(data.success){
+				  		login_data = data;
+                        
+                        $("#phonepanel").css('display','none');
+                        $("#verpanel").css('display','block');
+                        $("#code").focus(); 
+
+						$("#button_resend_code").attr("disabled","true");
+						$("#button_resend_code").css("background-color","#BFC1C6");
+						var seconds_count = 20;
+
+						setInterval(function(){
+						   if(seconds_count > 0){
+						   		$("#resend_text").html('Click "Resend" after '+seconds_count+' seconds.');
+						   		
+						   } else if(seconds_count > -2) {
+						   		$("#resend_text").html('Click "Resend".');
+						   		$("#button_resend_code").removeAttr( "disabled" );
+						   		$("#button_resend_code").css("background-color","#4f6b83");
+						   }
+						   seconds_count--;
+						}, 1000);	                        
+                    					  		
+				  	} 
+				}).fail(function() {
+					 swal.close();
+				    $("#mobile").prop('disabled', false);
+					$("#done_btn").css('display','block');
+					$("#report").html('Connection error. Please try again.');
+			  	}); 
+
+
+		});
+
+
+
+
+		var login_data = '';
+
+
+		
+
+
+		$("#mobile").focus();
+
+		$("#mobile").focus(function(){
+			$("#error").html('&nbsp;');
+		});
+
+		$("#code").focus(function(){
+			$("#code_error").html('&nbsp;');
+		});
+
+		$("#first_name").focus(function(){
+			$("#first_name").removeClass("has_error");
+			$("#name_error").html('');
+		}); //alt_number
+
+		$("#alt_number").focus(function(){
+			$("#alt_number").removeClass("has_error");
+			$("#name_error").html('');
+		});
+
+		$("#last_name").focus(function(){
+			$("#last_name").removeClass("has_error");
+			$("#name_error").html('');
+		});
+
+
+
+		$( "#update_form" ).submit(function( e ) {
+			e.preventDefault();
+			$("#name_error").html('');
+			var flag = 1;
+			if($.trim($("#first_name").val()) == ''){
+				$("#first_name").addClass("has_error");
+				flag = 0;
+			}
+			if($.trim($("#last_name").val()) == ''){
+				$("#last_name").addClass("has_error");
+				flag = 0;
+			} //
+			// if($.trim($("#alt_number").val()) == ''){
+			// 	$("#alt_number").addClass("has_error");
+			// 	flag = 0;  ()
+			// }
+			if(!$.trim($("#email").val()).match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+				$("#email").addClass("has_error");
+				flag = 0;
+			}
+			if(!$.trim($("#alt_number").val()).match(/^[+][2][5][5][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)	
+	    		&& !$.trim($("#alt_number").val()).match(/^[2][5][5][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)			
+	    		&& !$.trim($("#alt_number").val()).match(/^[0][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)){
+				           $("#alt_number").addClass("has_error");
+							flag = 0;
+	        }
+
+	        var mobile22 = $.trim($("#alt_number").val());
+	        mobile22 =  '255'+ mobile22.substring(mobile22.length - 9);
+
+	        if(mobile22 == login_data.mobile){
+	        	$("#alt_number").addClass("has_error");
+				flag = 0;
+	        }
+
+
+			if(flag == 1){
+
+				$("#loading").css('display','block');
+
+				var first_name = $.trim($("#first_name").val());
+				var last_name = $.trim($("#last_name").val());
+				var alt_number = mobile22;
+				var email = $.trim($("#email").val());
+
+				var settings = {
+				  "async": true,
+				  "crossDomain": true,
+				  "url": "https://fixchap.com/dev/login/api/update/name",
+				  "method": "POST",
+				  "headers": {
+				    "Content-Type": "application/json"
+				  },
+				  "processData": false,
+				  "data": "{\n\t\"user_id\": \""+login_data.user_id+"\",\n\t\"code\": \""+login_data.code+"\",\n\t\"first_name\": \""+first_name+"\",\n\t\"email\": \""+email+"\",\n\t\"alt_number\": \""+alt_number+"\",\n\t\"last_name\": \""+last_name+"\"\n}"
+				};
+
+				$.ajax(settings).done(function (response) {
+					var toProceed = 0;
+				  var data = JSON.parse(response);
+				  	if(data.success){
+		                localStorage.alt_number = alt_number;
+		                localStorage.first_name = first_name;
+		                localStorage.last_name = last_name;
+		                localStorage.user_photo = login_data.user_photo;
+		                localStorage.email = email;
+		                localStorage.user_id = login_data.user_id;
+		                localStorage.code = login_data.code;
+		                localStorage.session = 1;
+		                localStorage.data = '';
+
+					  		
+							var settings = {
+							"async": true,
+							"crossDomain": true,
+							"url": "https://fixchap.com/dev/app_sync/api/customerSync",
+							"method": "POST",
+							"headers": {
+							  "Content-Type": "application/json"
+							},
+							"processData": false,
+							"data": "{\"user_id\": \""+localStorage.user_id+"\"}"
+							};
+
+							$.ajax(settings).done(function (response) {
+							var data = JSON.parse(response);
+							  if(data.success){
+							  	localStorage.data = JSON.stringify(data).replace("'", "`");
+							  	window.location="index.html";							     
+							      
+							  } else {
+							  		$("#name_error").html('FixChap Error!');
+									$("#loading").css('display','none');							  	
+							  }
+						}).fail(function() {
+							$("#name_error").html('Error! Check your internet connection and try again.');
+							$("#loading").css('display','none');
+					  	});	
+				  	} else {
+				  		$("#name_error").html('FixChap Error!');
+						$("#loading").css('display','none');				  		
+				  	}
+				}).fail(function() {
+					$("#name_error").html('Error! Check your internet connection and try again.');
+					$("#loading").css('display','none');
+			  	});				
+			}
+		});
+
+
+
+		$( "#login_form" ).submit(function( e ) {
+			e.preventDefault();
+			if($.trim($("#mobile").val()) == ''){
+				$("#error").html('Enter your mobile number');
+			} else if(!$.trim($("#mobile").val()).match(/^[+][2][5][5][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)	
+	    		&& !$.trim($("#mobile").val()).match(/^[2][5][5][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)			
+	    		&& !$.trim($("#mobile").val()).match(/^[0][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)){
+				           $("#error").html('Invalid mobile number');
+	        }   else {
+				$("#mobile").prop('disabled', true);
+				$("#done_btn").css('display','none');
+				$("#report").html('Please wait while validating your mobile number.');
+
+				var mobile = $.trim($("#mobile").val());
+				mobile =  '255'+ mobile.substring(mobile.length - 9);
+
+				localStorage.mobile = mobile;
+
+				var settings = {
+				  "async": true,
+				  "crossDomain": true,
+				  "url": "https://fixchap.com/dev/login/api/send/code",
+				  "method": "POST",
+				  "headers": {
+				    "Content-Type": "application/json"
+				  },
+				  "processData": false,
+				  "data": "{\n\t\"mobile\": \""+mobile+"\"\n}"
+				};
+
+				$.ajax(settings).done(function (response) {
+					var data = JSON.parse(response);
+				  	if(data.success){
+				  		login_data = data;
+                        
+                        $("#phonepanel").css('display','none');
+                        $("#verpanel").css('display','block');
+                        $("#code").focus(); 
+
+
+                        $("#infopanel").css('display','none');
+						$("#button_resend_code").attr("disabled","true");
+						$("#button_resend_code").css("background-color","#BFC1C6");
+						var seconds_count = 20;
+
+						setInterval(function(){
+						   if(seconds_count > 0){
+						   		$("#resend_text").html('Click "Resend" after '+seconds_count+' seconds.');
+						   } else if(seconds_count > -5 ) {
+						   		$("#resend_text").html('Click "Resend".');
+						   		$("#button_resend_code").removeAttr( "disabled" );
+						   		$("#button_resend_code").css("background-color","#4f6b83");
+						   }
+						   seconds_count--;
+						}, 1000);	                        
+                    					  		
+				  	} else {
+						$("#mobile").prop('disabled', false);
+						$("#done_btn").css('display','block');
+						$("#report").html('FixChap failed to validate the mobile number. Please try again!');
+				  	}
+				}).fail(function() {
+				    $("#mobile").prop('disabled', false);
+					$("#done_btn").css('display','block');
+					$("#report").html('Connection error. Please try again.');
+			  	}); 			        	
+	        }
+		});
+
+		function verify(x){
+			$("#code").prop('disabled', true);
+			if(x == login_data.code){
+				$("#title").html('Personal Information');
+				$("#infopanel").css('display','none');
+				$("#verpanel").css('display','none');
+
+				$("#first_name").val(login_data.first_name);
+				$("#last_name").val(login_data.last_name);
+				$("#alt_number").val(login_data.alt_number);
+				$("#email").val(login_data.email);
+				if($("#email").val() == "null"){
+					$("#email").val('');
+				} 
+
+				$("#namepanel").css('display','block'); 
+				$("#first_name").focus(); 
+			} else {
+				$("#code").prop('disabled', false);
+				$("#code_error").html('Incorrect code.');
+			}
+		}
+
+
+
+		$( "#verify_form" ).submit(function( e ) {
+			e.preventDefault();
+			var code = $.trim($("#code").val());
+			verify(code);
+		});
+
+		$("#code").on('keyup', function(e) {
+			if($("#code").val().length >= 4 && $.trim($("#code").val())==login_data.code){
+				var code = $.trim($("#code").val());
+				verify(code);
+			}
+		});
+
+		$( document ).ready(function() {
+
+		   
+		   $("#header_class").css('display','block'); 
+		   $("#page-content").css('display','block');
+		});
+	</script>
+	<script type="text/javascript" src="scripts/intro.js"></script>	
+</body>
+</html>

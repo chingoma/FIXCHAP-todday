@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Marketplace</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="assets/fontawesome/css/regular.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="assets/flickity-slider/flickity.css"> -->
+  <link rel="stylesheet" type="text/css" href="../styles/sweetalert.css">
+  <link rel="stylesheet" href="assets/style/main.css">
+
+
+<link rel="stylesheet" type="text/css" href="slider-pro/dist/css/slider-pro.css" media="screen"/>
+
+
+  <style type="text/css" media="screen">
+    #container {
+      min-height: 1000px;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/style/jquery-fullsizable.css" />
+ 
+
+  <link rel="stylesheet" href="../styles/swiper2.css">
+  <link rel="stylesheet" href="../styles/swiper_marketplace_custom.css">
+
+
+  <script src="blitz-resize/dist/blitz.js"></script>
+  <script type="text/javascript" src="../cordova.js"></script>
+</head>
+<body style="-webkit-overflow-scrolling: auto !important">
+
+ 
+  <!-- Swiper -->
+  <div class="swiper-container disable-select" id="swiper-slider" style="z-index: 9999; height: 100vh; display: none; background-color: #13A89F;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+            <h1>HOW IT WORKS</h1>
+            <h2>PROMOCODE</h2>
+            <p class="spoint">
+                <img src="assets/images/slider_1.png"/>
+                <div class="content_desc">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+                <div class="hr-div"><hr/></div>
+                
+            </p>
+            <p class="spoint">
+                <img src="assets/images/slider_2.png"  style="top: -20px;"/>
+                <div class="content_desc">2. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            <p class="spoint">
+                <img src="assets/images/slider_3.png" style="top: 20px;"/>
+                <div class="content_desc">3. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            <p class="spoint">
+                <img src="assets/images/slider_4.png"/>
+                <div class="content_desc">4. On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            
+            <div style="margin-top: 30px;">
+                <label class="scontainer">Do not show this message again.
+                    <input name="donot" type="checkbox">
+                    <span class="scheckmark"></span>
+                </label>
+            </div>
+
+            <p class="s-next-btn"><span class="snextom">Go to Marketplace</span></p>
+      </div>
+      <div class="swiper-slide">
+        <h1>HOW IT WORKS</h1>
+        <h2>AS A SELLER</h2>
+        <p class="spoint">
+            <img src="assets/images/slider_5.png"/>
+            <div class="content_desc">1. Click "Sell and item" to Post your item (Do not input the price or your personal details such as phone no. and location on the description area)</div>
+            <div class="hr-div"><hr/></div>
+            
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_6.png"/>
+            <div class="content_desc">2. The selling Price = Your Price + Our Commision (You have control on the selling price since we stand for transparency)</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_7.png" />
+            <div class="content_desc">3. When a serious buyer is found, we notify you to bring the item to our store or we can come pick it at a separate agreed fee for the buyer to verify it..</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_4.png"/>
+            <div class="content_desc">4. When your item is sold we notify you right-away and send your cash on the same day.</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="sfooter">We handle the entire transaction process to give you safe and secure selling experience!</p>
+        <h2>WELCOME TO SELL WITH US!</h2>
+        <p class="s-next-btn"><span class="snext">Next &#10230;</span></p>
+      </div>
+      <div class="swiper-slide">
+        
+        <img src="../images/next.png" style="width: 100%;">
+        <div style="width: 60%; text-align: left; margin-bottom: 3px; color: #0C5E99; padding: 20px 40px 30px 40px; font-size: 28px;">
+        Expect top-notch service from well-vetted experts.
+
+        </div>
+        <button class="button" onclick="start_app()">Next</button>
+        <p style="color: #0C5E99; padding: 20px;">Tap "Next" to agree to the <a href="https://fixchap.com/terms.html" style="text-decoration: none; color: #13A89E;">Service Terms</a> and <a href="https://fixchap.com/privacy.html" style="text-decoration: none; color: #13A89E;">Privacy Policy</a>.</p>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+
+<script src="assets/jquery/jquery.js"></script>
+
+
+<!-- Swiper JS -->
+<script src="../scripts/swiper.js"></script>
+
+
+<script src="assets/script/sliders.js"></script>
+  
+
+
+<script type="text/javascript" src="slider-pro/dist/js/jquery.sliderPro.js"></script>
+
+<script type="text/javascript">
+    $("#swiper-slider").show();
+
+var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+    },
+});
+
+$( ".snext" ).click(function() {
+swiper.slideNext();
+});
+
+$('.snextom').click(function() {
+        if($('input[name="donot"]:checked').length > 0){
+            alert("do not");
+        } else {
+            alert("show");
+        }
+    });
+</script>
+
+</body>
+</html>

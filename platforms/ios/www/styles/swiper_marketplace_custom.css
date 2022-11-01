@@ -1,0 +1,124 @@
+.swiper-slide {
+    padding: 0 20px 0 20px;
+}
+.swiper-slide h1{
+    text-align: center; color: white; font-size: 16px; padding-top: 30px; letter-spacing: 1px; font-weight: bold;
+}
+.swiper-slide h2{
+    text-align: center; color: white; font-size: 20px;  letter-spacing: 1px; font-weight: bold; padding-top: 0px;
+    padding-bottom: 0;
+}
+.swiper-slide .point{
+    color: white; padding: 20px 20px 20px 20px; 
+}
+.swiper-slide .hr-div{
+    width: 70%; 
+}
+.swiper-slide .content_desc{
+    padding-top: 0px; width: 70%; color: rgb(224, 224, 224);
+    line-height: 17px;
+    font-size: 14px;
+}
+.swiper-slide .hr-div hr{
+    border-top: 2px solid white;
+}
+.swiper-slide .sfooter{
+    text-align: center;
+    color: rgb(224, 224, 224);
+    padding: 0 20px 0 20px;
+    line-height: 17px;
+    font-size: 14px;
+}
+.swiper-slide .s-next-btn{
+    margin-top: 40px;text-align: center; color: white;
+}
+.swiper-slide .snext {
+    border: 1px solid white; padding: 10px 30px; border-radius: 5px;
+}
+.swiper-slide .spoint { 
+     position: relative; 
+} 
+
+.swiper-slide .spoint img{ 
+     position: absolute; 
+     right: 0;
+     top: 0;
+     width: 70px;
+     height: 70px;
+     image-rendering: -webkit-optimize-contrast;
+} 
+
+/* The container */
+.scontainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgb(224, 224, 224);
+  }
+  
+  /* Hide the browser's default checkbox */
+  .scontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .scheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .scontainer:hover input ~ .scheckmark {
+    background-color: #fff;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .scontainer input:checked ~ .scheckmark {
+    background: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .scheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .scontainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .scontainer .scheckmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .gtmbtn {
+    border: 1px solid white; padding: 10px 30px; border-radius: 5px;
+  }

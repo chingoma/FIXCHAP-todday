@@ -1,0 +1,13 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "FixChap",
+  "short_name": "FixChap",
+  "version": "app.fixchap.com",
+  "description": "One-stop solution for all your home repair service needs.",
+  "author": "FixChap Team",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html",
+  "theme_color": "#11978E"
+}

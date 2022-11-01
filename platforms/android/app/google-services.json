@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "919581415789",
+    "firebase_url": "https://fixchap-c9ca7.firebaseio.com",
+    "project_id": "fixchap-c9ca7",
+    "storage_bucket": "fixchap-c9ca7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919581415789:android:c372c9990236b930",
+        "android_client_info": {
+          "package_name": "app.fixchap.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919581415789-2u82vdvkha554eas3jbnqaqk26bvou8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnqGoJWm0GESQ_LhPtkFmiNlVMly7-wNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919581415789-2u82vdvkha554eas3jbnqaqk26bvou8o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919581415789-vnsvhdfn0p7r70sb365ik5bosk46og3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.fixchap.com"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919581415789:android:4469a10720ae99b0",
+        "android_client_info": {
+          "package_name": "fixchap_customer.fixhchap.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919581415789-2u82vdvkha554eas3jbnqaqk26bvou8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnqGoJWm0GESQ_LhPtkFmiNlVMly7-wNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919581415789-2u82vdvkha554eas3jbnqaqk26bvou8o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919581415789-vnsvhdfn0p7r70sb365ik5bosk46og3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.fixchap.com"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919581415789:android:3db398c169bd0030",
+        "android_client_info": {
+          "package_name": "www.fixchap.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919581415789-2u82vdvkha554eas3jbnqaqk26bvou8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnqGoJWm0GESQ_LhPtkFmiNlVMly7-wNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919581415789-2u82vdvkha554eas3jbnqaqk26bvou8o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919581415789-vnsvhdfn0p7r70sb365ik5bosk46og3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.fixchap.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

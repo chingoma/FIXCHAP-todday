@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Marketplace</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+  <link href="assets/fontawesome/css/regular.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="assets/flickity-slider/flickity.css"> -->
+  <link rel="stylesheet" type="text/css" href="../styles/sweetalert.css">
+  <link rel="stylesheet" href="assets/style/main.css">
+
+
+<link rel="stylesheet" type="text/css" href="slider-pro/dist/css/slider-pro.css" media="screen"/>
+
+
+  <style type="text/css" media="screen">
+    #container {
+      min-height: 1000px;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/style/jquery-fullsizable.css" />
+  <link rel="stylesheet" href="../styles/swiper2.css">
+  <link rel="stylesheet" href="../styles/swiper_marketplace_custom.css">
+  <script src="blitz-resize/dist/blitz.js"></script>
+  <script type="text/javascript" src="../cordova.js"></script>
+</head>
+<body style="-webkit-overflow-scrolling: auto !important">
+
+  <!-- Swiper -->
+  <div class="swiper-container disable-select" id="swiper-slider" style="z-index: 9999; height: 100vh; display: none; background-color: #13A89F;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+            <h1>HOW IT WORKS</h1>
+            <h2>AS A BUYER</h2>
+            <p class="spoint">
+                <img src="assets/images/slider_1.png"/>
+                <div class="content_desc">1. Click "Buy Now" on the item you want to buy<br><br></div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            <p class="spoint">
+                <img src="assets/images/slider_2.png" style="margin-top: -20px;"/>
+                <div class="content_desc">2. Select "Verify and buy in store"<br><br></div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            <p class="spoint">
+                <img src="assets/images/slider_3.png"/>
+                <div class="content_desc">3. We notify you once the item is at our store for you to come verify and close sale, however delivery option is available at a separate agree fee. We verify it and bring it to you.</div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            <p class="spoint">
+                <img src="assets/images/slider_4.png"/>
+                <div class="content_desc">4. See and test the item and pay either in store or where you are if you opted for delivery.</div>
+                <div class="hr-div"><hr/></div>
+            </p>
+            <p class="sfooter">We handle the entire transaction process to give you safe and secure buying experience!</p>
+            <h2>WELCOME TO SHOP WITH US!</h2>
+            <p class="s-next-btn"><span class="snext">Next &#10230;</span></p>
+      </div>
+      <div class="swiper-slide">
+        <h1>HOW IT WORKS</h1>
+        <h2>AS A SELLER</h2>
+        <p class="spoint">
+            <img src="assets/images/slider_5.png"/>
+            <div class="content_desc">1. Click "Sell an item" to Post your item (Do not input the price or your personal details such as phone no. and location on the description area)</div>
+            <div class="hr-div"><hr/></div>
+            
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_6.png"/>
+            <div class="content_desc">2. The selling Price = Your Price + Our Commision (You have control on the selling price since we stand for transparency)</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_7.png" />
+            <div class="content_desc">3. When a serious buyer is found, we notify you to bring the item to our store or we can come pick it at a separate agreed fee for the buyer to verify it..</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_4.png"/>
+            <div class="content_desc">4. When your item is sold we notify you right-away and send your cash on the same day.</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="sfooter">We handle the entire transaction process to give you safe and secure selling experience!</p>
+        <h2>WELCOME TO SELL WITH US!</h2>
+        <p class="s-next-btn"><span class="snext">Next &#10230;</span></p>
+      </div>
+      <div class="swiper-slide">
+        <h1>HOW IT WORKS</h1>
+        <h2>PROMOCODE</h2>
+        <p class="spoint">
+            <img src="assets/images/slider_1.png"/>
+            <div class="content_desc">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+            <div class="hr-div"><hr/></div>
+            
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_2.png"  style="top: -20px;"/>
+            <div class="content_desc">2. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_3.png" style="top: 20px;"/>
+            <div class="content_desc">3. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        <p class="spoint">
+            <img src="assets/images/slider_4.png"/>
+            <div class="content_desc">4. On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</div>
+            <div class="hr-div"><hr/></div>
+        </p>
+        
+        <div style="margin-top: 30px;">
+            <label class="scontainer">Do not show this message again.
+                <input name="donot" type="checkbox">
+                <span class="scheckmark"></span>
+            </label>
+        </div>
+
+        <p class="s-next-btn"><span class="snextom gtmbtn">Go to Marketplace</span></p>
+  </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+<div id="the_splash" style="height: 100vh; background-color: #13A79E;">
+   <div style="padding-top: 40vh; color: #EFEFEF; text-align: center; font-size: 22px; line-height: 25px;;">
+      <img src="assets/images/mp_splash.png" height="70"><br><br>
+      FixChap Marketplace<br>
+      <span style="color:#C3C3C3; font-size: 17px;">Safe & Secure way to Buy/Sell Used items</span>
+    </div>
+</div>
+
+<div id="the_main_marketplace" style="display: none; -webkit-overflow-scrolling: auto !important">
+
+<div id="overlay"></div>
+
+
+<div class="header" style="z-index: 1000; ">
+    <div class="row">
+        <div class="col-2 h-left" style="padding: 20px 0 15px 40px;" id="back-icon">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="col-7 h-left" style="padding-left: 0; margin-top:5px; ">
+            <span class="page-title"></span>
+        </div>
+        <div id="profile-icon" class="col-3 h-right" style="letter-spacing: -4px; padding: 20px 40px 15px 0px;"><i class="fas fa-user-circle"></i> <span id="notification_count_out" style="letter-spacing: 1px; vertical-align: super; background-color:red; color: white; padding: 3px; border-radius: 50%; font-size: 10px;"></span>
+        </div>
+    </div>
+</div>
+
+<div class="header_search_text" style="z-index: 1001; display: none;">
+  <div class="row" style="background-color: white; margin: 10px 5px 0px 5px; border-radius: 4px; height: 40px;">
+      <div class="col-1" style="padding-top: 9px;" onclick="browse()">
+          <i class="fas fa-arrow-left" style="font-size: 20px; color: #ACABAB;"></i>
+      </div>
+      <div class="col-10">
+        <form id="search_form">
+        <input type="text" id="search_text_input" style="margin-top: 3px;width: 100%; font-size: 21px; border:none; color: #4F4F4F">
+        </form>
+      </div>
+      <div class="col-1" id="clear_search" onclick="clear_search()" style="display: none;color:#ACABAB; padding-top: 5px; font-size: 20px; text-align: left; padding-left: 0px;">
+          <i class="fas fa-times" style="font-size: 20px; color: #ACABAB;"></i>
+    </div>
+  </div>
+</div>
+
+<div class="header2">
+    <div class="row hide-on-scroll search-div">
+        <div class="col-12 search-col">
+          <div class="search" >
+              <div class="row">
+
+                <div class="col-2" onclick="pg_search()">
+                    <i class="fas fa-search"></i>
+                </div>
+                 <div class="col-8" onclick="pg_search()">
+
+                </div>
+                <div class="col-2" onclick="pg_filter()">
+                    <!-- <i class="fas fa-filter"></i> -->
+                    <img src="assets/images/filter_icon.png" style="width: 25px;">
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="sub-menu-div hide-on-scroll hh_home_pg" id="categorybrowse">
+      <div class="row two-subs-menu">
+        <div class="col-6 sub-menu" id="go_to_browse">Browse</div>
+        <div class="col-6 sub-menu" id="go_to_cat">Category</div>
+      </div>  
+    </div> 
+
+    <div class="general_sub-menu-div hh_sales_pg" id="postedunlisted">
+      <div class="row two-subs-menu">
+        <div class="col-6 sub-menu" id="go_to_sales_live">Posted</div>
+        <div class="col-6 sub-menu" id="go_to_sales_sold">Sold/Unlisted</div>
+      </div>  
+    </div>
+
+    <div class="general_sub-menu-div hh_purchases_pg">
+      <div class="row two-subs-menu">
+        <div class="col-6 sub-menu" id="go_to_purchases-booking">On-Pogress</div>
+        <div class="col-6 sub-menu" id="go_to_purchases-completed">Completed</div>
+      </div>  
+    </div>
+</div>
+
+<div id="page-post"></div>
+
+<div class="content" id="page-content" style="-webkit-overflow-scrolling: auto !important"></div>
+
+<div class="content" id="page-content-view-comment"></div>
+
+<div class="content" id="page-content-browse" style="display: none;">
+  <div class="post">
+    <div class="row" id="list_panel"></div>
+  </div>
+</div>
+
+<div class="content" id="page-content-browse-search" style="display: none;">
+  <div class="post">
+    <div class="row" id="list_panel_search_loader">
+      <div class="col-12">
+        <div style="margin-top: 30vh;">
+          <!-- <div class="lds-ring"><div></div><div></div><div></div><div></div></div> -->
+          <div style="margin-left: -5%;"><div class="lds-ripple"><div></div><div></div></div></div>
+          <div><br>Loading..</div>
+        </div>
+      </div>      
+    </div>
+    <div class="row" id="list_panel_search">     </div>
+  </div>
+</div>
+
+<div class="content" id="page-content-browse-filter" style="display: none;">
+  <div class="row" style="margin: 20px 15px 0px 15px;">
+    <div class="col-12" style="color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Category</div>
+    <div class="col-12" onclick="filter_category()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+        <div class="row">
+              <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_filter_category">Select Category</div>
+              <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+        </div>
+    </div>
+
+    <div class="col-12 filter_sc" style="margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Select Sub-Category</div>
+    <div class="col-12 filter_sc" onclick="filter_sub_category()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+        <div class="row">
+              <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_filter_subcategory">All</div>
+              <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+        </div>
+    </div>
+
+    <!-- <div class="col-12" style="margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Purpose</div>
+    <div class="col-12" onclick="filter_purposes()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+      <div class="row">
+            <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_filter_purposes">All</div>
+            <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+      </div>
+    </div> -->
+    <div class="col-12" style="margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Sort Order</div>
+    <div class="col-12" onclick="filter_sort()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+      <div class="row">
+            <div class="col-2" style="font-size: 20px; text-align: right;"><div><i class="fas fa-sort-amount-down"></i></div></div>
+            <div class="col-8" style="font-size: 20px; text-align: left; color: #A8A8A8; padding-left: 0px;" id="title_filter_sort_order">Newest</div>
+            <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+      </div>
+    </div>
+    <div class="col-12" style="margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Price Range</div>
+    <div class="col-12"  style="padding: 8px 15px 8px 15px;">
+      <div class="row">
+            <div class="col-5" style="font-size: 20px; padding: 0px;"><input id="title_filter_price_min" class="number_format" style="color: #A8A8A8; width: 100%; border: 1px solid #A8A8A8; border-radius: 5px; padding: 5px 10px 5px 10px;" inputmode="numeric" data-mask="00000000000"/></div>
+            <div class="col-2" style="font-size: 20px; text-align: left; color: #A8A8A8; padding-top: 5px;">to</div>
+            <div class="col-5" style="font-size: 20px; padding: 0px;"><input id="title_filter_price_max" class="number_format" style="color: #A8A8A8; width: 100%; border: 1px solid #A8A8A8; border-radius: 5px; padding: 5px 10px 5px 10px;" inputmode="numeric" data-mask="00000000000" /></div>
+      </div>
+    </div>
+   
+  </div>
+  <div class="row" style="margin: 20px 15px 0px 15px;">
+    <div class="col-12 wishlist-add-btn" onclick="start_filtering()">
+        Show
+    </div>
+  </div>
+  <div style="height: 400px;"></div>
+</div>
+
+<div class="content" id="page-wishlist" style="display: none;">
+  <div class="row" style="margin: 20px 15px 0px 15px;" id="wishlist-list">
+
+  </div>
+  <div class="row" style="margin: 20px 15px 0px 15px;">
+    <div class="col-12 wishlist-add-btn" onclick="pg_wishlist_add()">
+        Add
+    </div>
+  </div>
+</div>
+
+<div class="content" id="page-profile" style="display: none;">
+  <center>
+  <div style="position: relative;  width: 150px;">
+    <img id="the_profile_img_section" src="../images/profile.jpg" height="150" style="border-radius: 50%; margin-top: 30px; object-fit: cover;"/>
+    <img id="camera-change-profile-photo" src="assets/images/camera.png" height="40" style="position: absolute; bottom: 0px; right: 0px;"/>
+  </div>
+ 
+  <div style="margin: 20px 0 20px 0; font-size: 20px;" id="the_name_section"></div>
+  
+  <table style="width: 80%">
+      <tr id="the_vefiry_section">
+          
+      </tr>
+      <tr>
+        <td class="notifications-fields" style="width: 10%; border-bottom: 1px solid #d4d4d4;"><img src="assets/images/notificaton.png" height="20"></td>
+        <td class="notifications-fields" style="text-align: left; font-size: 18px; border-bottom: 1px solid #d4d4d4;padding: 10px;">Notifications <span id="notification_count_in" style="vertical-align: super; background-color: #13A89F; color: white; padding: 3px; border-radius: 50%; font-size: 10px;"></span></td>
+      </tr>
+      <tr>
+        <td class="" style="width: 10%; border-bottom: 1px solid #d4d4d4;"><img src="assets/images/promocode_tag.png" height="20"></td>
+        <td class="" style="text-align: left; font-size: 18px; border-bottom: 1px solid #d4d4d4;padding: 10px;">Promocode <br><span id="promocode_value" style="color: #13A89F; padding: 3px 0px 3px 0px; font-size: 27px;">Loading...</span><br><span style="font-size: 14px; color: rgb(78, 78, 78)">Balance: TZS <font id="promocode_balance"></font></span></sapn></td>
+      </tr>
+  </table>
+  <div style="padding: 10px; margin-top: 50px;width: 80%; font-size: 18px; background-color:#13A89F; color: white; border-radius: 10px;">
+    <a href="tel:+255686770012" style="text-decoration: none; color: white;">Call Support</a>
+  </div>
+   
+  </center>
+</div>
+
+<div class="content" id="page-notifications" style="display: none;" >
+    <div style="height: 40px;"></div>
+    <div>
+      <div style="font-size: 14px; text-align: left; color: #13A89F;">12 Jan 2021 23:12</div>
+      <div style="font-size: 14px; text-align: left;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+      <hr>
+    </div>
+    <div>
+      <div style="font-size: 14px; text-align: left; color: #13A89F;">12 Jan 2021 23:12</div>
+      <div style="font-size: 14px; text-align: left;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+      <hr>
+    </div>
+    <div style="font-weight: bold;">
+      <div style="font-size: 14px; text-align: left; color: #13A89F;">12 Jan 2021 23:12</div>
+      <div style="font-size: 14px; text-align: left;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+      <hr>
+    </div>
+    <div>
+      <div style="font-size: 14px; text-align: left; color: #13A89F;">12 Jan 2021 23:12</div>
+      <div style="font-size: 14px; text-align: left;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+      <hr>
+    </div>
+</div>
+
+<div class="content" id="page-new-wishlist" style="display: none;">
+  <div class="row" style="margin: 20px 15px 0px 15px;">
+    <div class="col-12" style="color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Category</div>
+    <div class="col-12" onclick="wishlist_filter_category()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+        <div class="row">
+              <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_wishlist_category">All Categories</div>
+              <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+        </div>
+    </div>
+    <div class="col-12 wl-sc" style="color: #13A79E; text-align: left; padding: 20px 0px 5px 3px; font-size: 13px;">Sub-Category</div>
+    <div class="col-12 wl-sc" onclick="wishlist_filter_subcategory()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+        <div class="row">
+              <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_wishlist_subcategory">All</div>
+              <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+        </div>
+    </div>
+    <!-- <div class="col-12 purpose-class" style="margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Purpose</div>
+    <div class="col-12 purpose-class" onclick="wishlist_filter_purposes()" style="border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+      <div class="row">
+            <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_wishlist_purpose">All</div>
+            <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+      </div>
+    </div> -->
+    <div class="col-12" style="display: none; margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Price</div>
+    <div class="col-12" onclick="wishlist_filter_pricerange()" style="display: none; border: 1px solid #A8A8A8; border-radius: 5px; padding: 8px 20px 8px 20px;">
+      <div class="row">
+            <div class="col-10" style="font-size: 20px; text-align: left; color: #A8A8A8;" id="title_wishlist_pricerange">Any</div>
+            <div class="col-2" style="font-size: 20px; text-align: right;"><div style="margin-top: -3px;"><i class="fas fa-sort-down"></i></div></div>
+      </div>
+    </div>
+    <div class="col-12" style="margin-top: 20px; color: #13A79E; text-align: left; padding: 0px 0px 5px 3px; font-size: 13px;">Price Range</div>
+    <div class="col-12"  style="padding: 8px 15px 8px 15px;">
+      <div class="row">
+            <div class="col-5" style="font-size: 20px; padding: 0px;"><input id="title_wishlist_price_min" class="number_format" style="color: #A8A8A8; width: 100%; border: 1px solid #A8A8A8; border-radius: 5px; padding: 5px 10px 5px 10px;" value="0" inputmode="numeric" data-mask="00000000000"/></div>
+            <div class="col-2" style="font-size: 20px; text-align: left; color: #A8A8A8; padding-top: 5px;">to</div>
+            <div class="col-5" style="font-size: 20px; padding: 0px;"><input id="title_wishlist_price_max" class="number_format" style="color: #A8A8A8; width: 100%; border: 1px solid #A8A8A8; border-radius: 5px; padding: 5px 10px 5px 10px;" value="100,000,000" inputmode="numeric" data-mask="00000000000" /></div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin: 40px 15px 0px 15px;">
+    <div class="col-12 wishlist-add-btn" onclick="submit_add_wishlist()">
+        Submit
+    </div>
+  </div>
+</div>
+
+
+
+<div class="choose-upload-method overflowswal">
+    <div class="row">
+        <div class="col-12 h-left" style="color: #717171; padding-left:45px; font-size: 16px;">Add photo from</div>
+        <div class="col-6 h-left" id="open_camera" style="color: #717171; padding-left:45px; font-size: 14px; color: #13A89F; font-weight: bold;">CAMERA</div>
+        <input type="file" multiple name="" id='input_file' hidden>
+        <div class="col-6 h-right" id="open_gallery" style="color: #717171; padding-right:45px; font-size: 14px; color: #13A89F; font-weight: bold;">GALLERY</div>
+    </div>
+</div>
+
+<div class="choose-remove-photo overflowswal">
+    <div class="row">
+        <div class="col-12 h-left" style="color: #717171; padding-left:45px; font-size: 16px;">Remove photo?</div>
+        <div class="col-7"></div>
+        <div class="col-2 h-right" onclick="cancel_remove()" style="color: #717171; padding-left:45px; font-size: 14px; color: #13A89F; font-weight: bold;" >NO</div>
+        <div class="col-2 h-left" onclick="remove_image()" style="color: #717171; padding-right:45px; font-size: 14px; color: #13A89F; font-weight: bold;">YES</div>
+    </div>
+</div>
+
+<div class="content" id="page-content2" style="display: none; z-index: 500;">
+    <div class="sell-item-form">
+
+            <!-- Material form contact -->
+         
+        <div style="padding: 5px;">        
+               
+              
+<!--              <div class="row" id="image_list" style="padding-top: 10px;"> </div>
+                  <div class="photo_count">0/6</div>
+                  <div style="color: #13A79E; line-height: 25px; padding-top: 30px;" id="open_gallery">
+                    <span style="font-size: 50px;"><i class="fas fa-plus-circle"></i></span><br>Add Photo
+                  </div>
+ -->
+                  <div style="text-align: left; margin-top: 10px;" id="pictures_count">Pictures (0/10) <small style="color: #13A79E"><i>Upload atleast 3 pictures</i></small></div>
+                  <div class="row photo_list">
+                    <div class="col-3 camera-img" style="padding: 2px;">
+                      <img class="item_photo uplbtns add_item_photo open_camera" style="width: 90px; height: 90px; object-fit: cover;" src="assets/images/addviacamera.png">
+                    </div>
+                      <div class="col-3" style="padding: 2px;">
+                          <img class="item_photo uplbtns add_item_photo open_gallery" style="width: 90px; height: 90px; object-fit: cover;" src="assets/images/addviagallery.png">
+                      </div>
+                    <div class="col-12" style="padding: 10px 0px 0px 0px; display: none;" id="photo-delete-instructions">
+                        Click image to remove
+                    </div>
+                    <div class="col-12" style="padding: 30px 0px 0px 0px; display: none;" id="photo-continue-btn">
+                      <button onclick="previewandcontinue()" class="book-btn" style="width: 100%; border: 0px solid white; margin: 0px;">Preview & Continue</button>
+                    </div>
+                    <!-- <input type="file" multiple="multiple" name="files[]" /> -->
+                  </div>
+                  <div style="text-align: right;"><span id="edit_picture_btn" onclick="edit_picture()" style="display:none; border: 1px solid #13A79E; background-color: #13A79E; color: white; padding: 5px; border-radius: 5px 6px 5px 6px;">Edit Pictures</span></div>
+
+                    <!-- Form -->
+                    <form class="text-center" style="color: #757575;" id="add_item_form">
+                      <div id="form-div">
+                        <!-- Name -->
+                        <div class="md-form mt-3">
+                         <label  for="addItemName" id="addItemNameLabel">Title (0/50)</label>
+                            <input type="text" id="addItemName" class="form-control" maxlength="50">  
+                        </div>
+                        <div class="md-form mt-3">
+                          <label  for="addItemDesc" id="addItemDescLabel" >Descriptions (0/250)</label>
+                            <textarea name="editor1" rows="1" class="form-control" id="addItemDesc" maxlength="250"></textarea>
+                        </div>
+                        <div class="md-form mt-3">
+                          <label  for="addItemSelectCategory">Category</label>
+                          <button type="button" id="addItemSelectCategory" class="form-control" style="text-align: left;">Select category</button>
+                        </div>
+
+                        <div class="md-form mt-3">
+                            <label  for="addItemSelectSubCategory">Sub Category</label>
+                            <button type="button" id="addItemSelectSubCategory" class="form-control" style="text-align: left;">Select sub-category</button>
+                        </div>
+                        <div class="md-form mt-3">
+                            <label  for="addItemCondition">Condition</label>
+                         <button type="button" id="addItemCondition" class="form-control" style="text-align: left;">Choose condition</button>
+                        </div>
+                        <div class="md-form mt-3">
+                          <label  for="addItemLocation">Location</label>
+                        <button type="button" id="addItemLocation" class="form-control" style="text-align: left;">Dar es Salaam</button>
+                        </div>
+                        
+                        <!-- <div class="md-form mt-3"> -->
+                          <!-- <label  for="addItemPurpose">Purpose</label> -->
+                          <!-- <select class="mdb-select form-control" id="addItemPurpose">
+                              <option value="" disabled>Purpose</option>
+                              <option value="1">Commercial</option>
+                              <option value="2">Charity</option>
+                          </select> -->
+                          
+                          <!-- <button type="button" id="addItemSelectPurpose" class="form-control" style="text-align: left;">Select Purpose</button> -->
+                            
+                        <!-- </div> -->
+                        <div class="md-form mt-3">
+                            <label  for="addItemPrice">Your Price in TZS (FixChap commision will be <font id="selling_price">0</font>/=)</label>
+                            <input  inputmode="numeric" data-mask="00000000000" id="addItemPrice"  class="form-control number_format">
+                        </div>
+                        <div class="md-form mt-3" id="promocode-section">
+                          <label  for="addPromocode" id="addPromocodeLable">Promocode</label>
+                           <input type="text" id="addPromocode" class="form-control" maxlength="10">  
+                       </div>
+
+                        <!-- Send button -->
+                        <button style="background-color: #13A79E; color: #ffffff;" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit" id="add_submit_btn">Submit</button>
+                         <div style="height: 300px;"></div>
+                      </div>
+                     </form>
+                    <!-- Form -->
+          </div>
+           
+      </div>
+</div>
+
+
+
+<div class="add-item-icon add-item">
+    <i class="fas fa-plus-circle"></i> SELL AN ITEM
+</div>
+
+<div class="add-item-icon add-item-min">
+    <i class="fas fa-plus-circle"></i>
+</div>
+
+<div class="book-item">
+    <div class="book-btn">BOOK FOR ASSESSMENT</div>
+</div>
+
+
+
+
+<div class="edit-item">
+  <div class="edit-btn">EDIT INFORMATION</div>
+</div>
+
+
+<table class="row bc-btn" id="buy_comment">
+<tr>
+  <!-- <td class="col-6 bc-btn-core" id="comment_to_seller" style="background-color: #e9e7e7; color: #13A89F;">Comment</td> -->
+  <td class="col-6 bc-btn-core" id="make_an_offer" style="background-color: #e9e7e7; color: #13A89F;">Make an Offer</td>
+  <td class="col-6 bc-btn-core" id="buy_now" style="background-color: #13A89F; color: white;">Buy Now</td>
+</tr>
+</table>
+
+<table class="row bc-btn" id="unlist_edit">
+  <tr>
+    <td class="col-6 bc-btn-core" id="unlist" style="background-color: #e9e7e7; color: #13A89F;">Unlist</td>
+    <td class="col-6 bc-btn-core" id="edit_post" style="background-color: #13A89F; color: white;">Edit</td>
+  </tr>
+</table>
+
+<table class="row bc-btn" id="unlist_delete">
+  <tr>
+    <td class="col-12 bc-btn-core" id="unlist_delete" style="background-color: #13A89F; color: white;">Delete</td>
+  </tr>
+</table>
+
+<div class="row bc-btn" id="status_layer" style="display: none; height: 70px; width: 100%; background-color: #13A89F; padding: 10px;">
+
+    <div class="col-12 bc-btn-core" id="status_layer_message" style=" color: white; width: 100%; vertical-align: middle;"> </div>
+
+</div>
+
+
+
+<div class="footer the-footer">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-2 f-icon f-icon-active" id="main-menu-browse"><i class="fas fa-search"></i><br>Home</div>
+    <div class="col-2 f-icon" id="main-menu-purchases"><i class="fas fa-dolly"></i><br>Purchases</div>
+    <div class="col-2 f-icon" id="main-menu-sales"><i class="fas fa-check-square"></i><br>Sales</div>
+    <div class="col-2 f-icon" id="main-menu-wishlist"><i class="fas fa-clipboard-list"></i><br>Wishlist</div>
+    <div class="col-2 f-icon" id="main-menu-likes"><i class="fas fa-heart" ></i><br>Likes</div>
+    <div class="col-1"></div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="modal_preparingpost" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+ 
+      <div class="modal-body text-center">
+        <p style="color: #13A89F;">FixChap is preparing your post.<br>Please wait..</p>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+
+
+<div id="modal_bring_item_to_store" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+ 
+      <div class="modal-body text-center">
+        <p style="color: #13A89F;">The item is available at FixChap store. Please come to verify the item.</p>
+        <center><div data-dismiss="modal" style="background-color: #13A89F; color: white; width: 80px; text-align: center; padding: 10px; border-radius: 5px;;">Okay</div></center>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+
+<div id="modal-profile-pic" class="modal fade" role="dialog" style="position:fixed;top:auto; right:auto; left:auto; bottom:0;">
+  <div class="modal-dialog" style="align-items: flex-end;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      
+      <div style="padding-top: 15px; color: rgb(99, 99, 99);" id="pi-open-gallery" class="condition_title">Gallery</div>
+     
+      <div style="border-top: 1px solid #c9c9c9; padding-top: 15px; color: rgb(99, 99, 99);" id="pi-open-camera" class="condition_title">Camera</div>
+
+      <div style="border-top: 1px solid #c9c9c9; padding-top: 15px; color: rgb(99, 99, 99);" id="remove_image_profile" class="condition_title">Remove Photo</div>
+     
+    </div>
+
+  </div>
+</div>
+
+<div id="modal_about_verification" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+ 
+      <div class="modal-body text-center">
+        <h4>How to be Verified</h4>
+        <p style="color: rgb(99, 99, 99);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <center><div data-dismiss="modal" style="background-color: #13A89F; color: white; width: 80px; text-align: center; padding: 10px; border-radius: 5px;;">Okay</div></center>
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+
+<style>
+ #modal_preparingpost .modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+#modal_preparingpost .modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  /* margin-right: -4px; */
+}
+
+#modal_preparingpost .modal-dialog {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  margin-top: 40vh;
+}
+</style>
+
+<script src="assets/jquery/jquery.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.0/dist/browser-image-compression.js"></script>
+<script>
+
+  var search_setInterval = '';
+  var browse_setInterval = '';
+  var cat_synced = 0;
+  var item_id_arrays = [];
+
+  $('#the_splash').ready() 
+  {
+      // $('#the_splash').remove();
+      // browse();
+     
+      myVar = setInterval(function() {
+        // item_id_arrays.length > 0
+        if(cat_synced == 1 || cat_synced == 2){
+          
+          $('#the_splash').remove();
+
+        
+              sliders()
+      
+       
+          var url = window.location.href;
+          var url_item_id = url.split("?id=")[1];
+          if(url_item_id){
+            
+          } else {
+
+            browse();
+            if(cat_synced == 2){
+              $('#page-content-browse').html('<div class="post"><div class="row" id="list_panel">'+localStorage.offlinecontent+'</div></div>');
+            }
+            
+          }
+
+
+          
+          clearInterval(myVar);
+        }  
+      }, 2500);
+  }
+
+  // $('#the_splash').remove();
+  // $('#the_main_marketplace').show();
+
+</script>
+<script src="assets/script/numeral.js"></script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/fastclick/fastclick.js"></script>
+<script src="assets/bootbox/bootbox.all.min.js"></script>
+<script type="text/javascript" src="../scripts/sweetalerts.js"></script>
+<script type="text/javascript" src="assets/script/jquery-fullsizable.js"></script>
+
+<script type="text/javascript" src='assets/script/autosize.js'></script>
+<script src="assets/script/cordova_plugins.js"></script>
+
+<script src="../scripts/rater.js" charset="utf-8"></script>
+<script src="js/firebase.js" charset="utf-8"></script>
+
+<!-- Swiper JS -->
+<script src="../scripts/swiper.js"></script>
+
+<script src="assets/script/sync.js"></script>
+<script src="assets/script/main.js"></script>
+<script src="assets/script/navigation.js"></script>
+<script src="assets/script/sliders.js"></script>
+<script src="assets/script/pg_browse.js"></script>
+<script src="assets/script/pg_search.js"></script>
+<script src="assets/script/pg_filter.js"></script>
+<script src="assets/script/pg_category.js"></script>
+<script src="assets/script/pg_add_post.js"></script>
+<script src="assets/script/pg_add_post_capture_image.js"></script>
+<script src="assets/script/pg_add_post_preview_images.js"></script>
+<script src="assets/script/pg_post_view.js"></script>
+<script src="assets/script/main_pages/pg_likes.js"></script>
+<script src="assets/script/main_pages/pg_posted.js"></script>
+<script src="assets/script/main_pages/pg_sold.js"></script>
+<script src="assets/script/main_pages/pg_purchases.js"></script>
+<script src="assets/script/main_pages/pg_bookings.js"></script>
+<script src="assets/script/main_pages/pg_sold.js"></script>
+<script src="assets/script/pg_wishlist.js"></script>
+<script src="assets/script/pg_comments.js"></script>
+<script src="assets/script/pg_post_pictures.js"></script>
+<script src="assets/script/pg_terms.js"></script>
+<script src="assets/script/trending.js"></script>
+<script src="assets/script/pull_to_refresh.js"></script>
+<script src="assets/script/items_storage.js"></script>
+  
+<script>
+$( document ).ready(function() {
+  var url = window.location.href;
+	var url_new_item = url.split("?new_item=")[1];
+	if(url_new_item){
+		$('#the_splash').remove();
+
+        sliders();
+    
+    if(localStorage.wishlisttarget){
+      localStorage.removeItem("wishlisttarget");
+      add_post_master();
+      pg_wishlist();
+    } else if (localStorage.likestarget){
+      localStorage.removeItem("likestarget");
+      add_post_master();
+      likes();
+    } else if(localStorage.gotoitem){
+      var item_id_to_go = localStorage.gotoitem;
+      localStorage.removeItem("gotoitem");
+      add_post_master();
+      open_post(item_id_to_go,'','','','','','','','','','','','','','','','','','','','',true);
+
+    } else {
+      add_post_master();
+    }
+		
+		clearInterval(myVar);
+	}
+});
+
+
+</script>
+<script>
+  $("input").on('blur',function(){
+      $("div.footer").show();
+  });
+  $("input").on('focus',function(){
+      $("div.footer").hide();
+  });
+  $("textarea").on('blur',function(){
+      $("div.footer").show();
+  });
+  $("textarea").on('focus',function(){
+      $("div.footer").hide();
+  });
+</script>
+
+<script type="text/javascript" src="slider-pro/dist/js/jquery.sliderPro.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="blitz-resize/dist/blitz.js"></script> -->
+    <script src="imgsrc.js"></script>
+    <!-- <script src="assets/jquery/jquery.js"></script> -->
+</head>
+
+<body>
+   
+    <!-- <button id="thbtn" onclick="myFunction()">Click Here</button> -->
+
+    <script>
+
+    // function dataURLtoFile(dataurl, filename) {
+    //     var arr = dataurl.split(','),
+    //         mime = arr[0].match(/:(.*?);/)[1],
+    //         bstr = atob(arr[1]), 
+    //         n = bstr.length, 
+    //         u8arr = new Uint8Array(n);
+            
+    //     while(n--){
+    //         u8arr[n] = bstr.charCodeAt(n);
+    //     }
+    //     return new File([u8arr], 'dkdk.png', {type:mime});
+    // }
+   
+
+    // function myFunction(){
+    //     console.log("here it is");
+    //     var base64image = 'data:image/jpeg;base64,'+the_big_image;
+
+    //     var my_image = dataURLtoFile(base64image,'../dkjfa.jpg');
+
+    //     // file -> file
+    //     var b5 = Blitz.create()
+
+    //     // file -> download
+    //     b5({
+    //         source: my_image,
+    //         width: 650,
+    //         outputFormat: 'jpg',
+    //         output: 'download',
+    //         quality: 0.9,
+    //         logPerformance: true
+    //     }).then(download => {
+    //         console.log('Resize using file->download successful')
+    //         alert(download());
+    //     }).catch(err => {
+    //         console.log(err)
+    //     })
+    // }
+
+    ///// Compress File
+
+
+    function resizeBase64Img(base64, newWidth, newHeight) {
+        return new Promise((resolve, reject)=>{
+            var canvas = document.createElement("canvas");
+            canvas.style.width = newWidth.toString()+"px";
+            canvas.style.height = newHeight.toString()+"px";
+            let context = canvas.getContext("2d");
+            let img = document.createElement("img");
+            img.src = base64;
+            img.onload = function () {
+                context.scale(newWidth/img.width,  newHeight/img.height);
+                context.drawImage(img, 0, 0); 
+                resolve(canvas.toDataURL());               
+            }
+        });
+    }
+
+    resizeBase64Img(the_big_image, 50, 50).then((result)=>{
+        console.log("After resize: "+result);
+    });
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="styles/swiper.css">
+  <link rel="stylesheet" type="text/css" href="styles/sweetalert.css">
+  <script type="text/javascript" src="scripts/jquery.js"></script>
+
+  <script type="text/javascript" src="scripts/fastclick.js"></script>
+  
+  <script type="text/javascript" src="scripts/sweetalerts.js"></script>
+  <script>
+    localStorage.clear();
+    localStorage.showmpslider = 1;
+
+    window.addEventListener('load', function() {
+        new FastClick(document.body);
+    }, false);    
+  </script>
+  <script type="text/javascript" src="cordova.js"></script> 
+
+  <script type="text/javascript" src="scripts/intro.js"></script> 
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+    }
+
+    .button {
+      background-color: #13A89F; /* Green */
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 3px;
+      width: 90%;
+    }   
+    .disable-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
+}   
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
+}
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container disable-select">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/outlay13.png" style="width: 100%;">
+          <p style="text-align: center; color: #13A89F; margin-top: 50px;"><span class="snext" style="border: 1px solid #13A89F; padding: 10px 30px; border-radius: 5px;">Next &#10230;</span></p>
+      </div>
+      <div class="swiper-slide"><img src="images/outlay14.png" style="width: 100%;">
+          <p style="text-align: center; color: #13A89F; margin-top: 50px;"><span class="snext" style="border: 1px solid #13A89F; padding: 10px 30px; border-radius: 5px;">Next &#10230;</span></p>
+      </div>
+      <div class="swiper-slide">
+        
+        <img src="images/next.png" style="width: 100%;">
+        <div style="width: 60%; text-align: left; margin-bottom: 3px; color: #0C5E99; padding: 20px 40px 30px 40px; font-size: 28px;">
+        Expect top-notch service from well-vetted experts.
+
+        </div>
+        <button class="button" onclick="start_app()">Next</button>
+        <p style="color: #0C5E99; padding: 20px;">Tap "Next" to agree to the <a href="https://fixchap.com/terms.html" style="text-decoration: none; color: #13A89E;">Service Terms</a> and <a href="https://fixchap.com/privacy.html" style="text-decoration: none; color: #13A89E;">Privacy Policy</a>.</p>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="scripts/swiper.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+
+    var go_to_home = 0;
+
+    if(localStorage.intro){
+       window.location="index.html";
+    } else {
+      localStorage.data = '';      
+    }
+
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+
+    function sync(){
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://fixchap.com/dev/app_sync/api/unregisteredSync",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "processData": false
+        };
+        $.ajax(settings).done(function (response) {
+          var data = JSON.parse(response);
+          $(".fixchap-connection").css('display','none');
+          if(data.success){ 
+
+                  localStorage.offline = 0;
+                  var stringdata = JSON.stringify(data).replace("'", "`");
+                  if(stringdata != localStorage.data){
+                    localStorage.data = stringdata;
+                  }
+
+                  localStorage.intro = 1;
+                  if(go_to_home == 1){
+                     window.location='index.html';
+                  }      
+
+            // var settings = {
+            //     "async": true,
+            //     "crossDomain": true,
+            //     "url": "https://fixchap.com/dev/pickgo/sync/api/sync",
+            //     "method": "POST",
+            //     "headers": {
+            //       "Content-Type": "application/json"
+            //     },
+            //     "processData": false
+            //   };
+            //   $.ajax(settings).done(function (response) {
+            //     var data_pickandgo = JSON.parse(response);
+            //     if(data_pickandgo.success){ 
+            //       var stringdata_pickandgo = JSON.stringify(data_pickandgo).replace("'", "`");
+            //       localStorage.pickandgo_data = stringdata_pickandgo;
+            //       localStorage.offline = 0;
+            //       var stringdata = JSON.stringify(data).replace("'", "`");
+            //       if(stringdata != localStorage.data){
+            //         localStorage.data = stringdata;
+            //       }
+
+            //       localStorage.intro = 1;
+            //       if(go_to_home == 1){
+            //          window.location='index.html';
+            //       }      
+            //     } else {
+            //       localStorage.offline++;
+            //     }
+            //   }).fail(function() {
+            //       localStorage.offline++;
+            //   }); 
+
+          } else {
+            localStorage.offline++;
+          }
+        }).fail(function() {
+            localStorage.offline++;
+        });       
+      }
+
+      sync(); 
+           
+      setInterval(function(){
+         sync();
+      }, 4000);      
+   
+
+      function start_app(){
+        if(localStorage.data == ''){
+        swal({ html: true, title: "", text: '<div style="margin: -20px 0px -27px 0px;">Starting FixChap..<p style="font-size: 12px; color: #A5A3A3;">Make sure you are connected to internet.</p></div>', showConfirmButton: false});        
+          go_to_home = 1;
+        } else {
+          window.location='index.html';
+        }
+      } 
+
+  
+
+      $( ".snext" ).click(function() {
+      swiper.slideNext();
+    });
+
+
+
+
+  </script>
+  
+</body>
+</html>

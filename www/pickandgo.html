@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<title>Pick&Go - FixChap</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/menu.css">
+	<link rel="stylesheet" type="text/css" href="styles/custom.css">
+	<link rel="stylesheet" type="text/css" href="styles/framework.css">
+	<link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="custom_fonts/styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/sweetalert.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-datetimepicker.css">
+	<script type="text/javascript" src="cordova.js"></script> 
+
+</head>
+<body class="landing-homepage disable-select" id="theBody" style="background-color: #13A89F;">
+
+    
+	<div id="app_out_map">
+		<div id="home_page">
+			<div class="gallery-fix"></div>
+			<div class="sidebar-tap-close" id="taptoclose"></div>
+
+
+			<div class="header-fixed pg-header-fixed">
+				<div  class="header-icon-1 open-left-sidebar fixchap-open-sidebar pg-menu-icon pg_page" id="pg_menu_icon"><i class="fa fa-navicon"></i>
+
+				</div>
+				<div onclick="onBackKeyDown()" class="header-icon-1 pg-menu-icon pg_page" id="pg_back_icon"><i class="fa fa-arrow-left"></i>
+				</div>
+				<div style="padding-top: 15px;">
+					<center>
+						<font class="fixchap-title pg-pick"><img src="images/pgword-01.png" height="30"></font>
+					</center>
+				</div>
+
+				<div></div>
+				<!-- <div class="fixchap-connection"></div> -->
+				<div class="cart_available" ><img src="images/cart32.png" style="height: 20px; border-radius: 50%; display: inline;" onclick='navigate("carts")'; /> <font style="color: #13A89F; padding-top: 10px;" id="the_cart_master_count"></font></div>
+			</div> 
+ 
+
+
+			<div class="sidebar-left sidebar-dark" id="theleftnav">
+				<div class="sidebar-scroll fixchap-sidebar" style="background-color: #13A89F;">
+					<div class="fixchap-sidebar-user registered" style="padding-top: 50px;">
+						<center>
+							<img src="images/profile.jpg" height="90" class="up_photo" style="border: 3px solid white;  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 7px 21px 0 rgba(0, 0, 0, 0.19);" onerror="this.src='images/profile.jpg'">
+							<p style="padding-top: 20px; font-size: 20px; font-weight: bold;" id="user_name"></p>
+						</center>
+					</div>
+						<div onclick='close_menu(); navigate("carts");' class="cpnMenu registered" style="margin-top: 25px;">
+							<img src="images/menu_icon_on_progress-01.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont"><font class="trn">Cart</font> <span class="pre_sup" id="sup_onprogress"></span></div>
+						</div>
+
+						
+
+						<div onclick='close_menu(); navigate("orders");' class="cpnMenu registered">
+							<img src="images/menu_icon_completed.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont"><font class="trn">Pending Orders</font> <span class="pre_sup" id="sup_completed"></span></div>
+						</div>
+
+
+						<div onclick='close_menu(); navigate("pickup");' class="cpnMenu registered">
+							<img src="images/menu_icon_completed.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont"><font class="trn">Pick Up</font> <span class="pre_sup" id="sup_pickup"></span></div>
+						</div>
+
+						<div onclick='close_menu(); navigate("completed");' class="cpnMenu">
+							<img src="images/menu_icon_pricing.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont trn">Completed Orders</div>
+						</div>
+
+						<div id="myshopmenu" onclick='close_menu(); navigate("myshop");' class="cpnMenu" style="display: none;">
+							<img src="images/menu_icon_pricing.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont trn myshopmenuname" style="font-size: 18px; font-weight: bold;" id="myshopmenuname">My Shop</div>
+						</div>
+						<!-- <div onclick='close_menu(); navigate("pricing");' class="cpnMenu">
+							<img src="images/menu_icon_pricing.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont trn">FixChap Repair</div>
+						</div> -->
+						<div class="cpnMenu">
+							<a href="tel:+255712770011">
+								<img src="images/menu_icon_support.png" class="cpnMenuIcon" />
+								<div class="cpnMenuFont trn">Call Support</div>
+							</a>
+						</div>
+
+						<a href="index.html" style="width: 150px;background-color: white; border: none; color: #13A89F;text-align: center;text-decoration: none; border-radius: 5px; display: inline-block;font-size: 14px;margin: 35px 2px 0px 20px; padding: 9px 0px 9px 0px; text-decoration: none;">FixChap Repair</a>
+				<!-- 		<div onclick='close_menu(); navigate("settings");' class="cpnMenu registered">
+							<img src="images/menu_icon_settings.png" class="cpnMenuIcon" />
+							<div class="cpnMenuFont trn">Settings</div>
+						</div> -->
+					<!-- <div class="fixchap-sidebar-user unregistered" style="background-color: white; border-bottom: 1px solid #13A89F; background-image: linear-gradient(#B6DFDC, #13A89F);">
+						<center>
+							<img src="images/logo.png" height="70" style="border-radius: 0px;">
+							<div style="margin-top: 20px;">&nbsp;</div>
+						</center>
+					</div> -->
+					<div class="sidebar-menu fixchap-menu">
+						<div class="unregistered" style="margin-top: 20px;"></div>	
+					</div>	
+				</div>
+			</div>
+		</div>
+
+
+		<div id="page-content" style="background-color: #edf1f5;">
+			<div id="page-content-scroll">
+
+			      <div id="pg_page_stores" class="pg_page">
+			      	<div class="" style="padding-top: 60px;">
+			      		<div style="padding: 13px;">
+			      			<!-- <input type="text" class="form-control form-control-lg" placeholder="Search" style="border-radius: 30px; background: url('./images/search.png') no-repeat center right #fff; border: none; padding: 23px 30px 23px 30px; font-size: 18px;"/> -->
+			      			<div class="row"  style="padding-top: 20px; padding-bottom: 20px;">
+			      				<div class="col-md-6 col-sm-6 col-xs-6" style="color: #4F6C83;">
+			      					<h4 id="store_list_title" style="padding: 10px; margin: 0px; font-size: 18px; display: none;">All Stores</h4>
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      				<div class="col-md-6 col-sm-6 col-xs-6 pull-right" style="text-align: right; padding-top: 10px; font-size: 11px;">
+
+			      						Order by
+				      					<select onchange="orderby()" id="orderby" style="background-color: #13A89F; padding: 6px 8px 6px 8px; color: white; border-radius: 10px;">
+				      						<option value="location">Distance</option>
+				      						<option value="az">A - Z</option>
+				      					</select>
+				      				
+			      		
+			      				</div>
+			      			</div>	
+			      			<div class="row" id="store_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div>
+			      			<div class="row" id="store_list" style="display: none;">
+			      				
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>	
+
+			      <div id="pg_page_cats" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<!-- <input type="text" class="form-control form-control-lg" placeholder="Search" style="border-radius: 30px; background: url('./images/search.png') no-repeat center right #fff; border: none; padding: 23px 30px 23px 30px; font-size: 18px;"/> -->
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 id="cats_strore_title" style="padding: 10px; margin: 0px; font-size: 18px;"></h4>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+			      			<div class="row" id="cat_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div>			      			
+			      			<div class="row">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="font-weight: bold; padding: 10px 0px 10px 25px; font-size: 15px;">Categories</div>
+			      			</div>
+			      			<div class="row" id="cat_list" style="padding: 8px;">
+			      			
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>
+
+			      <div id="pg_page_products" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 id="products_strore_title" style="padding: 10px; margin: 0px; font-size: 18px;"></h4>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+			      			<div class="row" id="product_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div>
+			      			<div class="row" id="product_list" style="padding: 8px;">
+
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>	
+
+			      <div id="pg_page_carts" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 style="padding: 10px 10px 20px 10px; margin: 0px; font-size: 18px;">Cart</h4>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+			      			<div class="row" id="carts_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div>
+			      			<div class="row" id="carts_list" style="padding: 0px 10px 10px 10px;">
+
+			      				
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>
+
+<!-- 			      					<div class="panel-group"  style="margin: 10px;">
+			      						<div class="panel panel-default"><a data-toggle="collapse" data-parent="#accordion" href="#eee4rde" style="text-decoration: none; color: black;"><div class="panel-heading" style="background-color: #4F6C83; color: white;"><h4 class="panel-title" style="text-align: left;">Here is the Title</h4></div></a><div id="eee4rde" class="panel-collapse collapse">
+			      							<div class="panel-body">Here are the list<br>goes one</div></div>
+			      						</div>
+								  	</div>
+								  	<div class="panel-group"  style="margin: 10px;">
+			      						<div class="panel panel-default"><a data-toggle="collapse" data-parent="#accordion" href="#eee4rde2" style="text-decoration: none; color: black;"><div class="panel-heading" style="background-color: #4F6C83; color: white;"><h4 class="panel-title" style="text-align: left;">2Here is the Title</h4></div></a><div id="eee4rde2" class="panel-collapse collapse">
+			      							<div class="panel-body">2Here are the list<br>goes one</div></div>
+			      						</div>
+								  	</div> -->
+
+			      <div id="pg_page_orders" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 style="padding: 10px 10px 20px 10px; margin: 0px; font-size: 18px;">Pending Orders</h4>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+<!-- 			      			<div class="row" id="orders_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div> -->
+			      			<div class="row" id="orders_list" style="padding: 0px 10px 10px 10px;">
+
+			      				
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>
+
+			      <div id="pg_page_pickuporders" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 style="padding: 10px 10px 20px 10px; margin: 0px; font-size: 18px;">PickUp Orders</h4>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+<!-- 			      			<div class="row" id="orders_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div> -->
+			      			<div class="row" id="pick_up_orders_list" style="padding: 0px 10px 10px 10px;">
+
+			      				
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>			      
+
+
+			      <div id="pg_page_completed" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 style="padding: 10px 10px 20px 10px; margin: 0px; font-size: 18px;">Completed Orders</h4>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+<!-- 			      			<div class="row" id="orders_loader">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div> -->
+			      			<div class="row" id="completed_list" style="padding: 0px 10px 10px 10px;">
+
+			      				
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>			      	
+
+			      <div id="pg_page_myshop" class="pg_page">
+			      	<div class="" style="padding-top: 50px;">
+			      		<div style="padding: 13px;">
+			      			<div class="row" style="padding-top: 10px; padding-bottom: 0px;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12" style="color: #4F6C83;">
+			      					<h4 style="padding: 10px 10px 0px 10px; margin: 0px; font-size: 18px;">My Shop</h4>
+			      					<p style="padding-left: 10px;" class="myshopmenuname"></p>
+
+
+			      					<div class="btn-group" role="group" aria-label="Basic example" style="padding-left: 10px;">
+									  <button  style="border-right: 1px solid #52AFA9;"  class="btn myShop myShopActive myShopRightBorder" id="myShopNew" onclick="list_myshop('new')">New Orders</button>
+									  <button onclick="list_myshop('pending')" id="myShopWaiting" style="border-right: 1px solid #52AFA9;" class="btn myShop myShopRightBorder">Waiting</button>
+									  <button onclick="list_myshop('pickup')" id="myShopPickup" style="border-right: 1px solid #52AFA9;" class="btn myShop myShopRightBorder">PickUp</button>
+									  <button onclick="list_myshop('completed')" class="btn myShop" id="myShopCompleted">Completed</button>
+									</div>
+
+			      					<!-- <p style="padding: 0px; margin: 0px; line-height: 20px;">203 Products</p> -->
+			      				</div>
+			      			</div>	
+			      			<div class="row" id="my_shop_loader" style="display: none;">
+			      				<div class="col-md-12 col-sm-12 col-xs-12">
+			      					<div class="loader"></div>
+			      				</div>
+			      			</div>
+			      			<div class="row" id="shop_orders_list" style="padding: 0px 10px 10px 10px;">
+
+			      				
+			      			</div>
+			      		</div>
+			      	</div>
+			      </div>			      		      		      	      
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+  	<script type="text/javascript" src="bootstrap/moment.min.js"></script>
+  	<script type="text/javascript" src="bootstrap/transition.min.js"></script>
+	<script type="text/javascript" src="scripts/plugins.js"></script>
+	<script src="scripts/rater.js" charset="utf-8"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+	<script src="scripts/rater.js" charset="utf-8"></script>
+	
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap-datetimepicker.js"></script>
+	
+  	<script src="scripts/bootbox.min.js"></script>
+
+  	<script src="scripts/bootbox.locales.min.js"></script>
+
+  	<script type="text/javascript" src="scripts/sweetalerts.js"></script>
+
+  	<script type="text/javascript" src="scripts/pickgosync.js"></script>
+
+  	<script type="text/javascript" src="scripts/add_to_cart.js"></script>
+
+  	<script type="text/javascript" src="scripts/navigation_pickandgo.js"></script>
+
+  	<script type="text/javascript" src="scripts/cordova_pickandgo.js"></script>
+
+  	
+
+  	<script type="text/javascript" src="scripts/pickandgo_cordova.js"></script>
+
+  	<!-- <script type="text/javascript" src="scripts/input_option_number.js"></script> -->
+
+  	
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-deeplinks": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-googlemaps": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-request-location-accuracy": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "skwas-cordova-plugin-datetimepicker": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-telerik-imagepicker": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "nl.madebymark.share": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-permission": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-clipboard": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    }
+  },
+  "dependent_plugins": {
+    "com.googlemaps.ios": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "app.fixchap.com"
+    }
+  }
+}

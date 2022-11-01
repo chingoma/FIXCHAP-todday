@@ -1,0 +1,87 @@
+	.details_panel {
+		background-color: white;
+		font-size: 15px; 
+		border: 1px solid #EFEFEF; 
+		margin-top: 10px; 
+		line-height: 27px; 
+		padding: 17px 15px 15px 15px;	
+	}
+	.details_head {
+		font-weight: bold; color: #13A89F;
+	}
+	.details_value {
+		font-size: 13px; color: #363636; 
+	}
+			 
+	.phone_input {
+		width: 100%;
+		border-bottom: 1px solid #13A89F;
+		padding: 15px 5px 5px 5px;
+		font-size: 20px;
+	}
+	.phone_input::placeholder {
+	  font-size: 15px;
+	}
+
+.phone_input2 {
+		width: 50%;
+		border-bottom: 1px solid #13A89F;
+		padding: 15px 5px 5px 5px;
+		font-size: 20px;
+		text-align: center;
+	}
+	.phone_input2::placeholder {
+	  font-size: 15px;
+	  text-align: center;
+	}
+
+.phone_input3 {
+		width: 90%;
+		border-bottom: 1px solid #64EDE5;
+		
+		padding: 0px 9px 9px 0px;
+		font-size: 14px;
+		margin-left: 10px;
+	}
+	.phone_input3::placeholder {
+	  font-size: 1spx;
+	}
+
+	.has_error {
+		border: 1px solid red;
+	}
+
+
+
+		      .button3 {
+				  background-color: #13A89F; 
+				  border: none;
+				  color: white;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  margin: 0px 2px;
+				  cursor: pointer;
+				  padding: 10px 24px;
+				  width: 40%;
+/*				  position: absolute;
+				  bottom: 5px;
+				  left: 10px;*/
+				}
+				.button4 {
+				  background-color: #13A89F; 
+				  border: none;
+				  color: white;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 16px;
+				  margin: 0px 2px;
+				  cursor: pointer;
+				  padding: 10px 24px;
+				  width: 50%;
+/*				  position: absolute;
+				  bottom: 5px;
+				  left: 10px;*/
+				}

@@ -1,0 +1,77 @@
+{
+  "_from": "blitz-resize",
+  "_id": "blitz-resize@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-tryA2WbvcBy4IlOhZrjCvpy3/PcUkDZoS+3ryuoYvZwckggHDeG3Wkl7WZCGptjNPP+eFFMmxWuRX9QC97VThA==",
+  "_location": "/blitz-resize",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "blitz-resize",
+    "name": "blitz-resize",
+    "escapedName": "blitz-resize",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/blitz-resize/-/blitz-resize-0.4.0.tgz",
+  "_shasum": "669efe00cfb1476c02e22cdd7a6e4f4092839d5e",
+  "_spec": "blitz-resize",
+  "_where": "/Users/cyruspeter/Desktop/untitled folder",
+  "author": {
+    "name": "calvintwr"
+  },
+  "browser": "dist/blitz.min.js",
+  "bugs": {
+    "url": "https://github.com/calvintwr/blitz-hermite-resize/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Most versatile, powerful, and fastest way to resize an image. Fast, non-blocking (does not freeze windows), and async/await/promise compatible.",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.1",
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "mocha": "^8.0.1",
+    "mocha-sinon": "^2.1.2",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0",
+    "tinyify": "^2.5.2"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "dist"
+  ],
+  "homepage": "https://github.com/calvintwr/blitz-hermite-resize#readme",
+  "keywords": [
+    "resize",
+    "image",
+    "compression",
+    "imageresizer",
+    "imagemagick",
+    "graphicsmagick"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "blitz-resize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvintwr/blitz-hermite-resize.git"
+  },
+  "scripts": {
+    "browserify": "browserify src/index.js > dist/blitz.js --standalone Blitz --global-transform [ babelify --configFile ./.dist.babelrc ]",
+    "browserify:minify": "browserify src/index.js > dist/blitz.min.js --standalone Blitz --global-transform [ babelify --configFile ./.dist.babelrc ] -p tinyify",
+    "build": "npm run browserify && npm run browserify:minify",
+    "test": "mocha './tests/' --recursive --exit -r esm"
+  },
+  "version": "0.4.0"
+}

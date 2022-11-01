@@ -1,0 +1,11 @@
+{
+    "android": {
+        "release": {
+            "keystore": "fixchap247.keystore",
+            "storePassword": "fixchap2019",
+            "alias": "fixchapalias247",
+            "password" : "fixchap2019",
+            "keystoreType": "JKS"
+        }
+    }
+}
